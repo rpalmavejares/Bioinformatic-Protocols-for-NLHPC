@@ -54,7 +54,143 @@ En el caso de que lleguemos al limite del Storage, durante la ejecución de una 
 
 #### Tanto la cantidad de CPUs como el Storage se pueden solicitar de forma indivual para para cuenta/usuario, por lo que es necesario revisar los requerimientos de cada uno ####
 
-A modo general. el uso de 100 CPUs y 500Gb para Team nuevos y 350+ CPUs y 1TB+ de Storage para Teams antiguos es recomendable.
+A modo general el uso de recursos optimo es alrededor de:
+
+> 100 CPUs y 500Gb para Team nuevos. <br>
+> 200+ CPUs y 1Tb+ de Storage para Teams antiguos <br>
+
+## Modo SUDO, Module LOAD e Instalación de software mediante gestor de paquetes.
+
+### Modo SUDO
+
+En el caso de nuestros computadores personales, podremos acceder a la instalación de tareas mediante SUDO o super usuario.
+Este metodo de instalación esta restringido para todas las cuentas del NLHPC a exepcion del equipo de soporte, por lo que ninguna herramienta se podra instalar mediante este metodo, es decir, los comandos tales como:
+
+```
+sudo install tool
+sudo apt install tool
+```
+NO son validos.
+<br>
+En el caso de necesitar instalar una tool que requiera especificamente este comando, existen 2 soluciones especificas.
+
+#### A. Instalación local con el codigo fuente. ####
+
+Para la instalación local de nuestra tool, primero necesitaremos el codigo fuente de la herramienta. Por lo general cualquier tool que utilice el comando SUDO, tiene un codigo fuente, el cual se puede descargar desde la pagina web del software o desde github. En nuestro caso, seguiremos el ejemplo de MEME Suite (https://web.mit.edu/meme/current/share/doc/install.html).
+
+```
+tar zxf meme_4.11.4.tar.gz
+cd meme_4.11.4
+./configure --prefix=$HOME/meme --with-url=http://meme-suite.org --enable-build-libxml2 --enable-build-libxslt
+make
+make test
+make instal
+```
+
+En el ejemplo anterior, podemos instalar localmente nuestra tool utilizando el comando especifico:
+```
+--prefix=$HOME/my_carpeta_personal
+o
+--prefix=/home/my_cuenta/my_carpeta_personal
+```
+
+En el caso de que no exista la opción de instalación del codigo fuente, o encontremos errores dentro del proceso, podemos utilizar la opcion B.
+
+#### B. Solicitud de instalación al equipo de Soporte NLHPC ####
+
+Cada vez que necesitemos instalar herramientas que parecen demasiado complicadas o requieren librerias que no podemos encontrar. Lo mejor es realizar una solicitud al equipo de Soporte del NLHPC (soporte@nlhpc.cl) mediante un correo.
+
+```
+at@ soporte@nlhpc.cl
+Asunto: Instalacion tool Meme Suite:
+_______________________________________
+
+Correo.....
+
+```
+En nuestro correo de solicitud debemos agregar:
+
+> El link de la tool a instalar. <br>
+> El o los usuarios a los que se desea instalar la tool.
+
+En el caso de que nuestra tool sea requerida por todo nuestro Team, existe la posibilidad de implementar la herramienta como Modulo, y que quede en el registro de tools instaladas del NLHPC para que pueda ser cargada por cualquier usuario, inclusive fuera de nuestro Team.
+
+### Module Load 
+
+El NLHPC tiene pre-instaladas una variedad de tools las cuales han sido testeadas y deberian ejecutarse sin problemas en cualquier cuenta del servidor.
+
+Para acceder al catalogo de herramientas pre-instaladas, podemos presionar en la consola:
+
+```
+$ module load [TAB]
+Display all 1113 possibilities? (y or n)
+amber                                         MCTDH
+Amber                                         MCTDH/86.3
+amber/20-mpi-zen4-w                           mercurial
+Amber/22-fosscuda                             mercurial/6.7.3-zen4-g
+Amber/22.intel-2019b                          merra2wps
+Amber/24-foss-2023b                           merra2wps/08-2021
+amber/24-rocm-gcc-14.2.0-zen4                 MESH
+amdblis                                       MESH/1.4
+........
+........
+........
+
+```
+
+Este comando listara todas las tools existentes, en el caso de buscar una nombre especifico, podemos poner las inciales o el nombre completo.
+
+```
+$ module load M[TAB]
+M4                                       MCR/R2018a                               Mono
+M4/1.4.17                                MCR/R2020b                               Mono/6.12.0.122
+M4/1.4.18                                MCTDH                                    Mothur/intel2022.00
+M4/1.4.19                                MCTDH/86.3                               Mothur/intel2022.00/1.48.1
+Magics                                   MEGAHIT                                  MPC
+Magics/4.13.0                            MEGAHIT/1.2.9                            MPC/1.0.1
+Mako                                     Mesa                                     MPC/1.2.1
+Mako/1.1.4                               Mesa/21.1.7                              MPFR
+MALT                                     MESH                                     MPFR/2.4.2
+MALT/0.5.2                               MESH/1.4                                 MPFR/3.1.2
+Mathematica                              MESH/1.4.2-symbols                       MPFR/4.1.0
+Mathematica/13.3                         Meson                                    MPPCrystal17
+MathGL                                   Meson/0.58.2                             MPPCrystal17/1.0.2
+MathGL/8.0.1                             MetaBAT                                  MuJoCo
+MathWorksServiceHost                     MetaBAT/2.15                             MuJoCo/2.1.1
+MathWorksServiceHost/2024.13.0.2         METIS                                    MultiNest
+Matlab                                   METIS/5.1.0                              MultiNest/3.10
+MATLAB                                   Miniconda2                               MultiQC
+Matlab/2017                              Miniconda2/4.7.10                        MultiQC/1.14
+MATLAB/2019b                             Miniconda3                               MUMmer
+Matlab-Runtime                           Miniconda3/4.5.12                        MUMmer/4.0.0beta2
+Matlab-Runtime/amd                       Miniconda3/4.9.2                         MUMmer/4.0.0rc1
+Matlab-Runtime/intel                     MinPath                                  MUMPS
+Maven                                    MinPath/1.6                              MUMPS/5.4.0-metis
+Maven/3.6.3                              Molekel                                  MUMPS/5.5.1-metis
+MCR                                      Molekel/5.4.0-Linux_x86_64               MUMPS/5.7.3-metis
+MCR/R2016b                               Molpro
+MCR/R2017a                               Molpro/mpp-2020.2.1.linux_x86_64_openmp
+```
+
+El comando module load o ml para abreviar, es sencible a mayusculas y minisculas, por lo que:
+```
+$ module load M[TAB]
+$ module load m[TAB]
+$ module load ME[TAB]
+$ module load Me[TAB]
+$ module load me[TAB]
+```
+Entregara diferentes resultados.
+
+Ademas, existen diferentes versiones para las tools pre-instaladas, por lo que habra que poner atención a la hora de cargar la tool y version correctas.
+
+```
+$ module load Java
+Java                        Java/17.0.2                 Java/1.8.0_202
+Java/11                     Java/17.0.4                 Java/1.8.0_232-b09-OpenJDK
+Java/11.0.2                 Java/1.8                    Java/23.0.2
+```
+
 
 
 
