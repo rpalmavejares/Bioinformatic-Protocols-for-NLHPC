@@ -1,15 +1,15 @@
 # Bioinformatic-Protocols-for-NLHPC
 Documentación con Tips y Buenas Practicas para el uso del NLHPC para tareas de Bioinformática y/o similares
 
-## Creación de cuentas, solicitudes de horas de computo, CPUs y Storage.
+## 1. Creación de cuentas, solicitudes de horas de computo, CPUs y Storage.
 
-### Creación de cuentas
+### 1.1 Creación de cuentas
 
 La creación de cuentas del NLHPC se puede separar en 2 grupos. 1) Usuarios nuevos sin conexion al NLHPC y 2) Usuarios que seran parte de un grupo ya existente en el NLHPC.
 
-1) En el primer grupo de usuarios, la creación de cuentas se da de forma exclusiva a un/una PI o investigadores jovenes, los cuales deberan rellenar el siguiente formulario con la información correspondiente https://solicitudes.nlhpc.cl/.
+* En el primer grupo de usuarios, la creación de cuentas se da de forma exclusiva a un/una PI o investigadores jovenes, los cuales deberan rellenar el siguiente formulario con la información correspondiente https://solicitudes.nlhpc.cl/.
 
-2) En el caso de que el PI este generando una cuenta para su grupo o equipoy que requiera mas de 1 cuenta, lo ideal es generar 1 cuenta de PI en https://solicitudes.nlhpc.cl/ y cuentas individuales para cada miembro del grupo, es decir.
+* En el caso de que el PI este generando una cuenta para su grupo o equipoy que requiera mas de 1 cuenta, lo ideal es generar 1 cuenta de PI en https://solicitudes.nlhpc.cl/ y cuentas individuales para cada miembro del grupo, es decir.
 ```
    a) 1 Cuenta de PI.
    b) N Cuentas, 1 por cada miembro del Team.
@@ -24,7 +24,7 @@ En el caso de necesitar una cuenta de datos la cual sera utilizada solo por peri
 Por lo general estas cuentas se usan solo para compartir datos con otros investigadores, o estudiantes en practica, los cuales no necesitan cuentas permanentes individuales.
 
 
-### Solicitudes de horas de computo, CPUs y storage.
+### 1.2 Solicitudes de horas de computo, CPUs y storage.
 
 Durante la creación de cuentas de cuentas del PI, se requerira establecer una cuota de horas de computo. Esta solicitud se asignara como limite de ejecución de tareas con una duración de 1 año, a partir de la fecha de la primera solicitud. Estas horas de computo se estableceran como limite para cada Team, por lo que no es necesario generar una peticion de horas de computo por cada cuenta. 
 
@@ -41,7 +41,7 @@ Para no repetir una nueva solicitud de horas de computo cada 4 o 6 meses, lo ide
 
 #### El cobro de horas de computo se realiza sobre el uso real, y no sobre las horas solicitadas en la creación de cuentas. ####
 
-### CPUs y Storage
+### 1.3 CPUs y Storage
 
 Al crear una nueva cuenta en el NLHPC, si no se especifican la cantidad de recursos de CPU y Storage, cada cuenta tendra por default 88 CPU y 120Gb de Storage. En el caso de las CPUs significa que el usuario, puede utilizar como máximo 88 CPUs al mismo tiempo durante procesos de ejecución, es decir, si ejecutamos 3 procesos con 40 CPU cada 1.
 
@@ -59,9 +59,12 @@ A modo general el uso de recursos optimo es alrededor de:
 > 100 CPUs y 500Gb para Team nuevos. <br>
 > 200+ CPUs y 1Tb+ de Storage para Teams antiguos <br>
 
-## Modo SUDO, Module LOAD e Instalación de software mediante gestor de paquetes.
+<br>
+<br>
 
-### Modo SUDO
+## 2 Modo SUDO, Module LOAD e Instalación de software mediante gestor de paquetes.
+
+### 2.1 Modo SUDO
 
 En el caso de nuestros computadores personales, podremos acceder a la instalación de tareas mediante SUDO o super usuario.
 Este metodo de instalación esta restringido para todas las cuentas del NLHPC a exepcion del equipo de soporte, por lo que ninguna herramienta se podra instalar mediante este metodo, es decir, los comandos tales como:
@@ -115,7 +118,7 @@ En nuestro correo de solicitud debemos agregar:
 
 En el caso de que nuestra tool sea requerida por todo nuestro Team, existe la posibilidad de implementar la herramienta como Modulo, y que quede en el registro de tools instaladas del NLHPC para que pueda ser cargada por cualquier usuario, inclusive fuera de nuestro Team.
 
-### Module Load 
+### 2.2 Module Load 
 
 El NLHPC tiene pre-instaladas una variedad de tools las cuales han sido testeadas y deberian ejecutarse sin problemas en cualquier cuenta del servidor.
 
