@@ -10,8 +10,8 @@ La creación de cuentas del NLHPC se puede separar en 2 grupos. 1) Usuarios nuev
 
 2) En el caso de que el PI este generando una cuenta para su grupo o equipoy que requiera mas de 1 cuenta, lo ideal es generar 1 cuenta de PI en https://solicitudes.nlhpc.cl/ y cuentas individuales para cada miembro del grupo, es decir:
 
-1 Cuenta PI 
-N Cuentas para cada miembro del team.
+a) 1 Cuenta PI 
+b) N Cuentas para cada miembro del team.
 
 La recomendación principal de la creación de cuentas para un grupo es idealmente, asignar un Nombre del Team Investigación. Como ejemplo: CRG-LAB1, CRG_UOH o, en mi caso particular, Mathomics.
 Esto facilitara luego, la creación de cuentas para miembros del mismo grupo, y la asignación de permisos, protocolos y tools que el grupo completo necesitara eventualmente.
