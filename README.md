@@ -43,11 +43,19 @@ Para no repetir una nueva solicitud de horas de computo cada 4 o 6 meses, lo ide
 
 ### CPUs y Storage
 
-Al crear una nueva cuenta en el NLHPC, si no se especifican la cantidad de recursos de CPU y Storage, cada cuenta tendra por default 88 CPU y 120Gb de Storage. Esto significa que, el usuario, puede utilizar como máximo 88 CPUs al mismo tiempo, es decir, si ejecutamos 3 procesos con 40 CPU cada 1.
+Al crear una nueva cuenta en el NLHPC, si no se especifican la cantidad de recursos de CPU y Storage, cada cuenta tendra por default 88 CPU y 120Gb de Storage. En el caso de las CPUs significa que el usuario, puede utilizar como máximo 88 CPUs al mismo tiempo durante procesos de ejecución, es decir, si ejecutamos 3 procesos con 40 CPU cada 1.
 
       a) Proceso 1 con 40 CPU. Este proceso se ejecutara sin problemas, siempre y cuando existan recursos en el NLHPC. 
       b) Proceso 2 con 40 CPU. Este proceso se ejecutara sin problemas, siempre y cuando existan recursos en el NLHPC.
       c) Proceso 3 con 40 CPU. Este proceso no se podra ejecutar hasta que el proceso a) o b) terminen. 
+
+En el caso del Storage, este valor es el limite maximo con el cual podremos guardar nuestros archivos o tareas. Si se da la instancia de que nuestra cuota de Storage esta en su limite, no se podran seguir ejecutando tareas, aun teniendo CPUs y horas de computo disponible. 
+En el caso de que lleguemos al limite del Storage, durante la ejecución de una de nuestras tareas, esta terminara antes forzosamente, y se notificara al usuario de la falta de espacio en nuestra cuenta.
+
+#### Tanto la cantidad de CPUs como el Storage se pueden solicitar de forma indivual para para cuenta/usuario, por lo que es necesario revisar los requerimientos de cada uno ####
+
+A modo general. el uso de 100 CPUs y 500Gb para Team nuevos y 350+ CPUs y 1TB+ de Storage para Teams antiguos es recomendable.
+
 
 
 
