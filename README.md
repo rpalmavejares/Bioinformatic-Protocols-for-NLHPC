@@ -1,8 +1,7 @@
 # Bioinformatic-Protocols-for-NLHPC
-Documentación con Tips y Buenas Practicas para el uso del NLHPC para tareas de Bioinformática y/o similares
+Documentación con Tips y Buenas Practicas para el uso del NLHPC para tareas de Bioinformática y/o similares<br>
 
 ## 1. Creación de cuentas, solicitudes de horas de computo, CPUs y Storage.
-
 ### 1.1 Creación de cuentas
 
 La creación de cuentas del NLHPC se puede separar en 2 grupos. 1) Usuarios nuevos sin conexion al NLHPC y 2) Usuarios que seran parte de un grupo ya existente en el NLHPC.
@@ -21,8 +20,7 @@ La recomendación principal es que cada nueva cuenta sea creada o solicitada por
 
 Para mantener el orden y la trazabilidad de los datos, lo ideal es que cada usuario pueda acceder a 1 sola cuenta. Compartir claves incurre una alta probabilidad de accesos no autorizados, uso de recursos no controlados o eliminación de datos sin consentimiento.
 En el caso de necesitar una cuenta de datos la cual sera utilizada solo por periodos cortos de tiempo, con varios usuarios distintos, se recomienda crear una cuenta especial de invitado. Esta cuenta debe estar registrada con el mismo PI y bajo el mismo Team.
-Por lo general estas cuentas se usan solo para compartir datos con otros investigadores, o estudiantes en practica, los cuales no necesitan cuentas permanentes individuales.
-
+Por lo general estas cuentas se usan solo para compartir datos con otros investigadores, o estudiantes en practica, los cuales no necesitan cuentas permanentes individuales.<br>
 
 ### 1.2 Solicitudes de horas de computo, CPUs y storage.
 
@@ -39,8 +37,7 @@ En el caso de que la cantidad de horas de computo solicitadas sea muy por debajo
 
 Para no repetir una nueva solicitud de horas de computo cada 4 o 6 meses, lo ideal es utilizar la información obtenida en la notificación del NLHPC y reajustar la petición para que coincida con el periodo de 12 meses.
 
-#### El cobro de horas de computo se realiza sobre el uso real, y no sobre las horas solicitadas en la creación de cuentas. ####
-
+#### El cobro de horas de computo se realiza sobre el uso real, y no sobre las horas solicitadas en la creación de cuentas. ####<br>
 ### 1.3 CPUs y Storage
 
 Al crear una nueva cuenta en el NLHPC, si no se especifican la cantidad de recursos de CPU y Storage, cada cuenta tendra por default 88 CPU y 120Gb de Storage. En el caso de las CPUs significa que el usuario, puede utilizar como máximo 88 CPUs al mismo tiempo durante procesos de ejecución, es decir, si ejecutamos 3 procesos con 40 CPU cada 1.
@@ -62,8 +59,8 @@ A modo general el uso de recursos optimo es alrededor de:
 <br>
 <br>
 
-## 2 Login al NLHPC.
-
+## 2. Login al NLHPC.
+<br>
 Una vez creada nuestra cuenta, podemos acceder al Login del NLHPC. El proceso actual, con fecha 2025 es tal como:
 
 ```
@@ -73,12 +70,11 @@ ssh -p 4603 mi_cuenta@leftraru.nlhpc.cl
 Con este comando podremos entrar al NLHPC en cualquier parte del pais, sin necesidad de una VPN.
 En el caso de encontrarnos temporalmente en el extranjero, se debera utilizar una VPN para anclarnos primero a Chile, y luego acceder al servidor de manera normal.
 
-
 <br>
 <br>
 
-## 3 Instalación de software mediante gestor de paquetes, Modo SUDO y Module LOAD.
-<br>
+## 3. Instalación de software mediante gestor de paquetes, Modo SUDO y Module LOAD.<br>
+
 ### 3.1 Instalación de software mediante gestor de paquetes
 La mayoria de las tools y paquetes en Bioinformática se pueden encontrar en gestores de paquetes altamente utilizados en ciencia, tales como:
 
@@ -104,8 +100,8 @@ conda install bioconda::meme
 conda install bioconda/label/cf201901::meme
 ```
 
-Eventualemte, la instalación se ejecutara sin problemas y podremos utilizar la herrameinta como corresponda.
-<br>
+Eventualemte, la instalación se ejecutara sin problemas y podremos utilizar la herrameinta como corresponda.<br>
+
 ### 3.2 Modo SUDO
 
 En el caso de nuestros computadores personales, podremos acceder a la instalación de tareas mediante SUDO o super usuario.
@@ -115,9 +111,8 @@ Este metodo de instalación esta restringido para todas las cuentas del NLHPC a 
 sudo install tool
 sudo apt install tool
 ```
-NO son validos.
-<br>
-En el caso de necesitar instalar una tool que requiera especificamente este comando, existen 2 soluciones especificas.
+NO son validos.<br>
+En el caso de necesitar instalar una tool que requiera especificamente este comando, existen 2 soluciones especificas.<br>
 
 #### A. Instalación local con el codigo fuente. ####
 
@@ -139,7 +134,7 @@ o
 --prefix=/home/my_cuenta/my_carpeta_personal
 ```
 
-En el caso de que no exista la opción de instalación del codigo fuente, o encontremos errores dentro del proceso, podemos utilizar la opcion B.
+En el caso de que no exista la opción de instalación del codigo fuente, o encontremos errores dentro del proceso, podemos utilizar la opcion B.<br>
 
 #### B. Solicitud de instalación al equipo de Soporte NLHPC ####
 
@@ -158,8 +153,7 @@ En nuestro correo de solicitud debemos agregar:
 > El link de la tool a instalar. <br>
 > El o los usuarios a los que se desea instalar la tool.
 
-En el caso de que nuestra tool sea requerida por todo nuestro Team, existe la posibilidad de implementar la herramienta como Modulo, y que quede en el registro de tools instaladas del NLHPC para que pueda ser cargada por cualquier usuario, inclusive fuera de nuestro Team.
-<br>
+En el caso de que nuestra tool sea requerida por todo nuestro Team, existe la posibilidad de implementar la herramienta como Modulo, y que quede en el registro de tools instaladas del NLHPC para que pueda ser cargada por cualquier usuario, inclusive fuera de nuestro Team.<br>
 ### 3.3 Module Load 
 
 El NLHPC tiene pre-instaladas una variedad de tools las cuales han sido testeadas y deberian ejecutarse sin problemas en cualquier cuenta del servidor.
