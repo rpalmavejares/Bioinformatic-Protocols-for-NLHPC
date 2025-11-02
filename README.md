@@ -62,9 +62,37 @@ A modo general el uso de recursos optimo es alrededor de:
 <br>
 <br>
 
-## 2 Modo SUDO, Module LOAD e Instalación de software mediante gestor de paquetes.
+## 2 Instalación de software mediante gestor de paquetes, Modo SUDO y Module LOAD.
 
-### 2.1 Modo SUDO
+### 2.1 Instalación de software mediante gestor de paquetes
+
+La mayoria de las tools y paquetes en Bioinformática se pueden encontrar en gestores de paquetes altamente utilizados en ciencia, tales como:
+
+```
+Anaconda3
+Miniconda
+Mamba
+HomeBrew
+PERL
+PIP
+```
+Tanto Anaconda3 como Miniconda funcionan sin problemas en el NLHPC (https://www.anaconda.com/docs/getting-started/miniconda/install#linux-x86) y se pueden instalar de manera local en nuestra cuenta como:
+
+```
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash ~/Miniconda3-latest-Linux-x86_64.sh
+source ~/.bashrc
+```
+Una vez instalados, es tan simple como instalar cualquier tools que exista en el gestor de paquetes, en nuestro caso, usaremos como ejemplo Meme Suite. (https://anaconda.org/bioconda/meme):
+
+```
+conda install bioconda::meme
+conda install bioconda/label/cf201901::meme
+```
+
+Eventualemte, la instalación se ejecutara sin problemas y podremos utilizar la herrameinta como corresponda.
+
+### 2.2 Modo SUDO
 
 En el caso de nuestros computadores personales, podremos acceder a la instalación de tareas mediante SUDO o super usuario.
 Este metodo de instalación esta restringido para todas las cuentas del NLHPC a exepcion del equipo de soporte, por lo que ninguna herramienta se podra instalar mediante este metodo, es decir, los comandos tales como:
@@ -118,7 +146,7 @@ En nuestro correo de solicitud debemos agregar:
 
 En el caso de que nuestra tool sea requerida por todo nuestro Team, existe la posibilidad de implementar la herramienta como Modulo, y que quede en el registro de tools instaladas del NLHPC para que pueda ser cargada por cualquier usuario, inclusive fuera de nuestro Team.
 
-### 2.2 Module Load 
+### 2.3 Module Load 
 
 El NLHPC tiene pre-instaladas una variedad de tools las cuales han sido testeadas y deberian ejecutarse sin problemas en cualquier cuenta del servidor.
 
@@ -175,7 +203,7 @@ MCR/R2016b                               Molpro
 MCR/R2017a                               Molpro/mpp-2020.2.1.linux_x86_64_openmp
 ```
 
-El comando module load o ml para abreviar, es sencible a mayusculas y minisculas, por lo que:
+El comando module load o ml para abreviar, es sencible a mayusculas y minisculas:
 ```
 $ module load M[TAB]
 $ module load m[TAB]
@@ -183,7 +211,8 @@ $ module load ME[TAB]
 $ module load Me[TAB]
 $ module load me[TAB]
 ```
-Entregara diferentes resultados.
+
+Cada uno de los comandos anteriores generara resultados diferentes, por lo que es necesario tomar precauciones a la hora de cargar un modulo.
 
 Ademas, existen diferentes versiones para las tools pre-instaladas, por lo que habra que poner atención a la hora de cargar la tool y version correctas.
 
@@ -193,7 +222,6 @@ Java                        Java/17.0.2                 Java/1.8.0_202
 Java/11                     Java/17.0.4                 Java/1.8.0_232-b09-OpenJDK
 Java/11.0.2                 Java/1.8                    Java/23.0.2
 ```
-
 
 
 
