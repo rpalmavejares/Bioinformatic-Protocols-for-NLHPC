@@ -230,6 +230,13 @@ Java                        Java/17.0.2                 Java/1.8.0_202
 Java/11                     Java/17.0.4                 Java/1.8.0_232-b09-OpenJDK
 Java/11.0.2                 Java/1.8                    Java/23.0.2
 ```
+<br>
+<br>
+
+## 4. Ejecución de tares / Jobs, particiones del NLHPC y solicitud de recursos en la cola de procesos.<br>
+
+
+
 
 
 
