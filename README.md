@@ -6,18 +6,16 @@ Documentación con Tips y Buenas Practicas para el uso del NLHPC para tareas de 
 
 La creación de cuentas del NLHPC se puede clasificar en 2 grupos: 1) Usuarios nuevos sin conexión previa al NLHPC y 2) Usuarios que serán parte de un grupo ya existente en el NLHPC.
 
-    1. En el primer grupo de usuarios, la creación de cuentas se da de forma exclusiva a un/una PI
+1. En el primer grupo de usuarios, la creación de cuentas se da de forma exclusiva a un/una PI
     (Investigador Principal) o investigadores jóvenes, quienes deberán rellenar el siguiente
     formulario con la información correspondiente: https://solicitudes.nlhpc.cl/.
 
-    2. En el caso de que el PI esté generando una cuenta para su grupo o equipo y requiera más de una
+2. En el caso de que el PI esté generando una cuenta para su grupo o equipo y requiera más de una
     cuenta, lo ideal es generar 1 cuenta de PI en https://solicitudes.nlhpc.cl/ y cuentas individuale
     s para cada miembro del grupo, es decir:
 
-```
     a) 1 Cuenta de PI.
     b) N Cuentas, 1 por cada miembro del Equipo (Team).
-```
 
 La recomendación principal al crear cuentas para un grupo es, idealmente, asignar un Nombre del Equipo de Investigación. Como ejemplos: CRG-LAB1, CRG_UOH o, en mi caso particular, Mathomics. Esto facilitará la posterior creación de cuentas para miembros del mismo grupo y la asignación de permisos, protocolos y herramientas (tools) que el grupo completo necesitará eventualmente.
 
