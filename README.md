@@ -539,7 +539,8 @@ Some of your processes may have been killed by the cgroup out-of-memory handler.
 ```
 
 Este será uno de los principales errores que encontraremos a diario en nuestro archivo #SBATCH -e [ERROR FILE]. Este error indica principalmente que la cantidad de RAM que solicitamos es insuficiente y debemos pedir más en nuestro Archivo de ejecución.
-Existen algunas herramientas que recomiendan un número definido de RAM, pero para la mayoría, seremos nosotros los que decidamos cuánta memoria solicitar. *Como buena práctica, incrementar la RAM en un 20% extra e intentar nuevamente suele ser la mejor opción*
+Existen algunas herramientas que recomiendan un número definido de RAM, pero para la mayoría, seremos nosotros los que decidamos cuánta memoria solicitar. **Como buena práctica, incrementar la RAM en un 20% extra e intentar nuevamente suele ser la mejor opción**
+
 <br>
 
 ### 6.3 Segmentation fault (core dumped). Aborted (core dumped) ###
