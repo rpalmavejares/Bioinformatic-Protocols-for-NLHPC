@@ -278,7 +278,7 @@ Aca-nuestro-programa
 
 ```
 #SBATCH -J [JOB_NAME] :           Aquí irá el nombre de nuestra tarea. Utilizar nombres cortos y fáciles de identificar
- es lo recomendado.
+                                  es lo recomendado.
 ```
 
 ```
