@@ -266,7 +266,9 @@ $ vim standar_job.sh
 #SBATCH --mail-type=ALL 
 ```
 <br>
-#### Revisemos ahora cada uno de los parametros:##### <br>
+
+#### Revisemos ahora cada uno de los parametros:##### 
+
 <br>
 
 
