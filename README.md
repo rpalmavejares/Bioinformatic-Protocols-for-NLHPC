@@ -267,7 +267,7 @@ $ vim standar_job.sh
 ```
 <br>
 
-#### Revisemos ahora cada uno de los parametros:##### 
+### Revisemos ahora cada uno de los parametros: ####
 
 <br>
 
