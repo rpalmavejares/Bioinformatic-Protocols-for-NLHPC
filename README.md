@@ -235,7 +235,7 @@ Java/11.0.2                 Java/1.8                    Java/23.0.2
 
 ## 4. Ejecución de tareas / Jobs en la cola de procesos y solicitud de recursos .<br>
 
-### 4.1 Ejecución de tareas / Jobs <br>
+### 4.1 Archivo de ejecución de tareas / Jobs <br>
 
 Todas las tareas que necesitemos ejecutar en el NLHPC deben entrar en la cola de procesos a travez de un archivo de ejecución.
 Ejecutar tareas directamente en en consola, sin pasar por la cola de procesos, tiene un tiempo limite maximo de ejecucion de 30 minutos.
@@ -289,9 +289,10 @@ $ vim standar_job.sh
                                     mi210
                                     mi100
                                     v100<br>
-                                    El nombre de la particion a escoger se debera escoger segun las necesidades que tengamos
-                                    para correr tools.
-                                    La mayor parte de nuestras tareas correran en "general", "main" o "largemem"
+                                    Se debera escoger la partición segun las necesidades que tengamos para ejecutar nuestras
+                                    tools.
+                                    La mayor parte de nuestras tareas correran en "general", "main" o "largemem", puesto que
+                                    CPU y RAM componen ma mayor parte de las tools en Bioinformatica.
 
 ```
 
@@ -369,10 +370,84 @@ $ vim standar_job.sh
                                                 "TAREA CANCELADA", "TAREA TERMINADA", entre otros.
 ```
 
+<br>
 
+### 4.2 Solicitud de Recursos ###
 
+Una vez revisado cada campo de nuestro Archivo de ejecución de tareas, podremos ahora solicitar la cantidad de recusos y el tiempo que estimemos conveniente.
+Como se menciono brevemente, una tool que pueda utilizar mas de 1 CPU, no necesariamente se ejecutara 70 veces mas rapico al pedir 70 CPUs.
 
+La experiencia nos dice que la mayor cantidad de herramientas grandes escala solo hasta los 20 a 40 CPU. Ademas, es mucho mas eficiente dividir nuestras tareas
+en fragmentos o chunks y ejecutarlos al mismo tiempo, que ejecutar todo junto pidiendo mas CPU, es decir, ejecutar la misma tarea, dividida en 5 partes con 20 CPU cada una, sera mucho mas eficiente que ejecutar la misma tarea completa 1 vez con 100 CPU.
 
+De todas formas, existe un catalogo infino te tools que podremos utilizar, y aunque no podemos conocer a priori sus requerimientos de ejecucion de maxima eficiencia, la experiencia nos brindara un mejor juico a la hora de escoger recursos.
+<br>
+Pero a falta de tiempo, he aqui algunos ejemplos.
 
+### TAREAS DE ASSEMBLY. 1 Metegenoma grande de 200+ Millones de Reads. Tool: MEGAHIT ###
+
+```
+#SBATCH -p main o largemem
+#SBATCH -n 1
+#SBATCH -c [12-20]
+#SBATCH --mem=[200GB-400GB]
+#SBATCH -t 2-00:00:00
+```
+
+### TAREAS DE ANOTACION.  Mismo metagenoma, contra una base de datos de 50GB. Tool: EggNOGMapper ###
+
+```
+#SBATCH -p main
+#SBATCH -n 1
+#SBATCH -c [8 a 12]
+#SBATCH --mem=80GB
+#SBATCH -t 4-00:00:00
+```
+
+### CLUSTERING DE GENES.  400+ Millones de CDS. Tool: MMseqs2 ###
+
+```
+#SBATCH -p main
+#SBATCH -n 1
+#SBATCH -c [12 a 20]
+#SBATCH --mem=[400GB - 500GB]
+#SBATCH -t 3-00:00:00
+```
+
+### CREACION DE MAGS / BINNING. Tool: SemiBin2 ### 
+
+```
+#SBATCH -p main
+#SBATCH -n 1
+#SBATCH -c [12 a 20]
+#SBATCH --mem=[20GB - 150GB]
+#SBATCH -t [2-00:00:00 a 7-00:00:00]
+```
+
+### ANOTACION DE MAGS. 1 MAG. Tool: Bakta: ###
+
+```
+#SBATCH -p main
+#SBATCH -n 1
+#SBATCH -c 2
+#SBATCH --mem=20GB
+#SBATCH -t 08:00:00
+```
+
+### ANOTACION DE MAGS. 1000+ MAG. Tool: DRAM: ###
+
+```
+#SBATCH -p main
+#SBATCH -n 1
+#SBATCH -c [12 a 20]
+#SBATCH --mem=200GB
+#SBATCH -t 14-23:00:00
+```
+
+Estos son algunos ejemplos de las tareas con mayor cantidad de recursos que he tenido experiencia de probar en el NLHPC. Cabe considerar que estos datos tienen un peso aproximado de TB, por lo que proyecto relativamente livianos requeriran menos recursos.
+Cabe destacar que la regla de 1 CPU por cada 5GB de RAM no aplica para ninguno de los programas listados. Esta regla es mas bien una recomendación de eficiendia en programas altamente revisados, y lamentablemente, no aplica para la mayoria de herramientas bioinformáticas.
+Mientras utilizemos rangos de CPU y RAM que no se salgan de extremos, como por ejemplo, ejecutar una tool single thread con 50 CPU y 700GB de RAM, no deberiamos tener mayores problemas.
+
+#### Como recordatorio, todas las tareas / jobs, tienen un maximo tiempo de ejecucion de 30 DIAS. Luego de esto, sin importar el tiempo pedido, la tarea sera cancelada automaticamente ####
 
 
