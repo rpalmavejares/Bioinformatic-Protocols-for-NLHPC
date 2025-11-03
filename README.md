@@ -2,6 +2,7 @@
 Documentación con Tips y Buenas Practicas para el uso del NLHPC para tareas de Bioinformática y/o similares<br>
 
 ## 1. Creación de cuentas, solicitudes de horas de computo, CPUs y Storage.
+
 ### 1.1 Creación de cuentas
 
 La creación de cuentas del NLHPC se puede clasificar en 2 grupos: 1) Usuarios nuevos sin conexión previa al NLHPC y 2) Usuarios que serán parte de un grupo ya existente en el NLHPC.
@@ -23,7 +24,7 @@ La recomendación principal es que cada nueva cuenta sea creada o solicitada por
 
 Para mantener el orden y la trazabilidad de los datos, lo ideal es que cada usuario pueda acceder a una sola cuenta. Compartir claves conlleva una alta probabilidad de accesos no autorizados, uso de recursos no controlados o eliminación de datos sin consentimiento. En el caso de necesitar una cuenta de datos que será utilizada solo por periodos cortos de tiempo por varios usuarios distintos, se recomienda crear una cuenta especial de invitado. Esta cuenta debe estar registrada con el mismo PI y bajo el mismo Equipo. Por lo general, estas cuentas se usan solo para compartir datos con otros investigadores o estudiantes en práctica que no necesitan cuentas permanentes individuales.
 
-### 1.2 Solicitudes de horas de computo, CPUs y storage.
+### 1.2 Solicitudes de horas de computo.
 
 Durante la creación de la cuenta del PI, se requerirá establecer una cuota de horas de cómputo. Esta solicitud se asignará como límite de ejecución de tareas con una duración de 1 año, a partir de la fecha de la primera solicitud. Estas horas de cómputo se establecerán como límite para cada Equipo, por lo que no es necesario generar una petición de horas de cómputo por cada cuenta.
 
