@@ -266,10 +266,15 @@ $ vim standar_job.sh
 Revisemos ahora cada uno de los parametros:<br>
 
 ```
-#SBATCH -J [JOB_NAME] : Aca ira el nombre de nuestra tarea. Utilizar nombres cortos y faciles de identificar es lo recomendado <br>
-------------------------
+#SBATCH -J [JOB_NAME] :             Aca ira el nombre de nuestra tarea. Utilizar nombres cortos y faciles de identificar
+                                    es lo recomendado
+```
+
+
+```
 #SBATCH -p [PARTITION] :            En este campo ira la particion del NLHPC al cual enviaremos nuestra tarea.
-                                    Actualmente existen 6 particiones que los usuarios pueden utilzar. Las caracteristicas de cada particion se encuentran en https://dashboard.nlhpc.cl/
+                                    Actualmente existen 6 particiones que los usuarios pueden utilzar.
+                                    Las caracteristicas de cada particion se encuentran en https://dashboard.nlhpc.cl/
                                     estas particiones son:
                                     main
                                     general
@@ -277,29 +282,50 @@ Revisemos ahora cada uno de los parametros:<br>
                                     mi210
                                     mi100
                                     v100<br>
-                                    El nombre de la particion a escoger se debera escoger segun las necesidades que tengamos para correr tools. La mayor parte de nuestras tareas correran en "general", "main" o "largemem"
+                                    El nombre de la particion a escoger se debera escoger segun las necesidades que tengamos
+                                    para correr tools.
+                                    La mayor parte de nuestras tareas correran en "general", "main" o "largemem"
 
-<br>
-------------------------
-#SBATCH -n [NUMBER OF NODES]:       Este parametro indica el numero de NODOS para ejecutar nuestras tareas. En Bioinformatica muy pocas tools estan optimizadas para ejecutarse en mas de 1 NODO, por lo que es practicamente improbable utilizar mas de 1.
-<br>
-------------------------
-#SBATCH -c [NUMBER OF CPU] :         Aca se establece el numero de CPUs a utilizar. Por mas que podamos pedir 100 CPUs, la mayor parte de las tools en Bioinformatica solo escalan hasta 12 o 20 CPUS, con algunas exepciones llegando a los 40 CPU.
-                                     Pedir mas no nos dara una ventaja real de tiempo de ejucion. Al contrario, perderemos mas tiempo esperando que se liberen los recursos que ejuctar las tareas con la mitad de CPUs. 
-<br>
-------------------------
+```
+
+
+```
+#SBATCH -n [NUMBER OF NODES]:       Este parametro indica el numero de NODOS para ejecutar nuestras tareas. En Bioinformatica
+                                    muy pocas tools estan optimizadas para ejecutarse en mas de 1 NODO, por lo que es
+                                    practicamente improbable utilizar mas de 1.
+```
+
+
+
+```
+#SBATCH -c [NUMBER OF CPU] :        Aca se establece el numero de CPUs a utilizar. Por mas que podamos pedir 100 CPUs,
+                                    la mayor parte de las tools en Bioinformatica solo escalan hasta 12 o 20 CPUS, con algunas
+                                    exepciones llegando a los 40 CPU.
+                                    Pedir mas no nos dara una ventaja real de tiempo de ejucion. Al contrario, perderemos
+                                    mas tiempo esperando que se liberen los recursos que ejuctar las tareas con la mitad de CPUs. 
+```
+
+
+```
 #SBATCH --mem= [RAM MEMORY IN GB] : 
-<br>
-------------------------
+```
+
+
+
+```
 #SBATCH -o [ERROR FILE] :
-<br>
-------------------------
+```
+
+
+
+
+```
 #SBATCH -e [OUTPUT FILE] :
-<br>
-------------------------
+```
+
+```
 #SBATCH -t [EXECUTION TIME] :
- ```
-asda
+```
 
 
 
