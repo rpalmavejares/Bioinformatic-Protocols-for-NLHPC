@@ -304,11 +304,11 @@ Revisemos ahora cada uno de los parametros:<br>
                                     Pedir mas no nos dara una ventaja real de tiempo de ejucion. Al contrario, perderemos
                                     mas tiempo esperando que se liberen los recursos que ejuctar las tareas con la mitad
                                     de CPUs.
-                                   - El formato de esta variable es: Numeros enteros del 1 al 256, dependiendo de cada
-                                   partición:
-                                   Limite CPU particion main      = 256
-                                   Limite CPU particion general   =  44
-                                   Limite CPU particion largemem  =  44
+                                    - El formato de esta variable es: Numeros enteros del 1 al 256, dependiendo de cada
+                                    partición:
+                                    Limite CPU particion main      = 256
+                                    Limite CPU particion general   =  44
+                                    Limite CPU particion largemem  =  44
 ```
 
 
@@ -321,29 +321,29 @@ Revisemos ahora cada uno de los parametros:<br>
                                     recomendación es casi inutilizable en Bioinformatica. En nuestro caso, existiran tools
                                     que utilizaran 200 a 400Gb de RAM, pero se ejecutaran solo en 20 a 40 CPU.
                                     Mas adelante veremos algunos ejemplos de ejecución.
-                                   - El formato de esta variable es: Numeros enteros del 1 al 256, seguido del sufijo GB,
-                                   dependiendo de cada partición:
-                                   Limite RAM particion main      = 710GB
-                                   Limite RAM particion general   = 175GB
-                                   Limite RAM particion largemem  = 710GB
+                                    - El formato de esta variable es: Numeros enteros del 1 al 256, seguido del sufijo GB,
+                                    dependiendo de cada partición:
+                                    Limite RAM particion main      = 710GB
+                                    Limite RAM particion general   = 175GB
+                                    Limite RAM particion largemem  = 710GB
 
    
 ```
 
 ```
-#SBATCH -o [ERROR FILE] :         Este archivo contendra la salida de errores de la ejecucion de nuestra tool.
-                                  Aca podremos revisar si nuestra ejecución fue exitosa o si existio algun problema
-                                  particular que produjo la terminacion forsoza de nuestro job.
-                                  Es importante siempre configurar este archivo, pues es la unica forma real de
-                                  reconocer errores para futuras ejecuciones
+#SBATCH -o [ERROR FILE] :           Este archivo contendra la salida de errores de la ejecucion de nuestra tool.
+                                    Aca podremos revisar si nuestra ejecución fue exitosa o si existio algun problema
+                                    particular que produjo la terminacion forsoza de nuestro job.
+                                    Es importante siempre configurar este archivo, pues es la unica forma real de
+                                    reconocer errores para futuras ejecuciones
 ```
 
 ```
-#SBATCH -e [OUTPUT FILE] :        Este archivo contiene la salida por consola de nuestra tool. Cuando la
-                                  herramienta que estamos tratando de ejecutar no tiene configurado un
-                                  archivo de output, la salida de nuestro programa sera escrita aqui. La mayor
-                                  parte de los archivos output sera un mensage propio de cada tool con informacion
-                                  y tiempo de ejecucion.
+#SBATCH -e [OUTPUT FILE] :          Este archivo contiene la salida por consola de nuestra tool. Cuando la
+                                    herramienta que estamos tratando de ejecutar no tiene configurado un
+                                    archivo de output, la salida de nuestro programa sera escrita aqui. La mayor
+                                    parte de los archivos output sera un mensage propio de cada tool con informacion
+                                    y tiempo de ejecucion.
 ```
 
 ```
