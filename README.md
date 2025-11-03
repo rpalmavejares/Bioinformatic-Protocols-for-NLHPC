@@ -494,6 +494,14 @@ Para estas excepciones y otras, podemos enviar un correo a soporte@nlhpc.cl y en
 <br>
 <br>
 
+## 5. Ejecución de tareas / jobs. Monitoreo <br>
+
+
+
+
+<br>
+<br>
+
 ## 6. Errores de ejecución de tareas / jobs. <br>
 
 En un mundo perfecto, todas nuestras tareas correrán en el tiempo asignado y finalizarán sin ningún inconveniente. Mientras eso no exista, revisemos algunos de los errores más frecuentes y cómo solucionarlos.
