@@ -265,7 +265,10 @@ $ vim standar_job.sh
 #SBATCH --mail-user=your-email-here@examp.com
 #SBATCH --mail-type=ALL 
 ```
-Revisemos ahora cada uno de los parametros:<br>
+<br>
+#### Revisemos ahora cada uno de los parametros:##### <br>
+<br>
+
 
 ```
 #SBATCH -J [JOB_NAME] :             Aca ira el nombre de nuestra tarea. Utilizar nombres cortos y faciles de identificar
