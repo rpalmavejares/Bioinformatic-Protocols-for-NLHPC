@@ -234,7 +234,7 @@ Java/11.0.2                 Java/1.8                    Java/23.0.2
 <br>
 <br>
 
-## 4. Ejecución de tareas / Jobs en la cola de procesos y solicitud de recursos .<br>
+## 4. Archivode ejecución de tareas / Jobs en la cola de procesos y solicitud de recursos .<br>
 
 ### 4.1 Archivo de ejecución de tareas / Jobs <br>
 
