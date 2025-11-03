@@ -331,19 +331,19 @@ Revisemos ahora cada uno de los parametros:<br>
 ```
 
 ```
-#SBATCH -o [ERROR FILE] :           Este archivo contendra la salida de errores de la ejecucion de nuestra tool.
-                                    Aca podremos revisar si nuestra ejecución fue exitosa o si existio algun problema
-                                    particular que produjo la terminacion forsoza de nuestro job.
-                                    Es importante siempre configurar este archivo, pues es la unica forma real de
-                                    reconocer errores para futuras ejecuciones
+#SBATCH -o [ERROR FILE] :         Este archivo contendra la salida de errores de la ejecucion de nuestra tool.
+                                  Aca podremos revisar si nuestra ejecución fue exitosa o si existio algun problema
+                                  particular que produjo la terminacion forsoza de nuestro job.
+                                  Es importante siempre configurar este archivo, pues es la unica forma real de
+                                  reconocer errores para futuras ejecuciones
 ```
 
 ```
-#SBATCH -e [OUTPUT FILE] :          Este archivo contiene la salida por consola de nuestra tool. Cuando la
-                                    herramienta que estamos tratando de ejecutar no tiene configurado un
-                                    archivo de output, la salida de nuestro programa sera escrita aqui. La mayor
-                                    parte de los archivos output sera un mensage propio de cada tool con informacion
-                                    y tiempo de ejecucion.
+#SBATCH -e [OUTPUT FILE] :        Este archivo contiene la salida por consola de nuestra tool. Cuando la
+                                  herramienta que estamos tratando de ejecutar no tiene configurado un
+                                  archivo de output, la salida de nuestro programa sera escrita aqui. La mayor
+                                  parte de los archivos output sera un mensage propio de cada tool con informacion
+                                  y tiempo de ejecucion.
 ```
 
 ```
