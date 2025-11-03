@@ -57,8 +57,8 @@ En el caso de que lleguemos al limite del Storage, durante la ejecución de una 
 
 A modo general el uso de recursos optimo es alrededor de:
 
-    **100 CPUs y 500Gb** para Team nuevos. 
-    **200+ CPUs y 1Tb+** de Storage para Teams antiguos 
+    100 CPUs y 500Gb para Team nuevos. 
+    200+ CPUs y 1Tb+ de Storage para Teams antiguos 
 
 <br>
 <br>
