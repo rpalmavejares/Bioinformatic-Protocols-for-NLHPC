@@ -263,7 +263,10 @@ $ vim standar_job.sh
 #SBATCH -e [OUTPUT FILE]
 #SBATCH -t [EXECUTION TIME]
 #SBATCH --mail-user=your-email-here@examp.com
-#SBATCH --mail-type=ALL 
+#SBATCH --mail-type=ALL
+
+Aca-nuestro-programa
+
 ```
 <br>
 
@@ -372,6 +375,29 @@ $ vim standar_job.sh
 
 <br>
 
+
+Ahora que ya sabemos como configurar nuestro archivo de ejecución, veamos un ejemplo real.
+   
+```
+#SBATCH -J GBK
+#SBATCH -p general
+#SBATCH -n 1
+#SBATCH -c 1
+#SBATCH --mem=6GB
+#SBATCH -o error.%a.%N.%j.out 
+#SBATCH -e error.%a.%N.%j.err
+#SBATCH -t 06:00:00
+#SBATCH --mail-user=your-email-here@examp.com
+#SBATCH --mail-type=ALL
+
+python gbk_generator.py my_input_1 my_input_2 > salida_programa.tsv
+
+```
+
+<br>
+
+
+
 ### 4.2 Solicitud de Recursos ###
 
 Una vez revisado cada campo de nuestro Archivo de ejecución de tareas, podremos ahora solicitar la cantidad de recusos y el tiempo que estimemos conveniente.
@@ -444,10 +470,41 @@ Pero a falta de tiempo, he aqui algunos ejemplos.
 #SBATCH -t 14-23:00:00
 ```
 
-Estos son algunos ejemplos de las tareas con mayor cantidad de recursos que he tenido experiencia de probar en el NLHPC. Cabe considerar que estos datos tienen un peso aproximado de TB, por lo que proyecto relativamente livianos requeriran menos recursos.
+### PARSEO DE BASES DE DATOS / SCRIPTS DE PYTHON, ENTRE OTROS: ###
+
+```
+#SBATCH -p general o main
+#SBATCH -n 1
+#SBATCH -c 1
+#SBATCH --mem=[5GB - 40GB]
+#SBATCH -t [06:00:00 a 1-00:00:00]
+```
+
+
+Estos son algunos ejemplos de las tareas con mayor cantidad de recursos que he tenido experiencia de probar en el NLHPC. Cabe considerar que estos datos tienen un peso aproximado de TBs, por lo que proyectos relativamente livianos requeriran menos recursos.
 Cabe destacar que la regla de 1 CPU por cada 5GB de RAM no aplica para ninguno de los programas listados. Esta regla es mas bien una recomendación de eficiendia en programas altamente revisados, y lamentablemente, no aplica para la mayoria de herramientas bioinformáticas.
 Mientras utilizemos rangos de CPU y RAM que no se salgan de extremos, como por ejemplo, ejecutar una tool single thread con 50 CPU y 700GB de RAM, no deberiamos tener mayores problemas.
 
 #### Como recordatorio, todas las tareas / jobs, tienen un maximo tiempo de ejecucion de 30 DIAS. Luego de esto, sin importar el tiempo pedido, la tarea sera cancelada automaticamente ####
+
+¿Y que hacemos si nuestra tool necesita correr por mas de 30 dias y no queremos que se cancele automaticamente?
+
+Para estas exepciones y otras, podemos enviar un correo a soporte@nlhpc.cl y enviar nuestro JOB_ID de la tarea en ejecucion para pedir una extencion de tiempo.
+
+<br>
+<br>
+
+## 6. Errores de ejecución de tareas / jobs. <br>
+
+Ahora, revisaremos u
+
+### 6.1 OOM_KILL EVENT. Some of the step tasks have been OOM Killed. ###
+
+```
+check.4294967294.mn002.33145959.err:slurmstepd: error: Detected 1 oom_kill event in StepId=33145959.batch.
+Some of the step tasks have been OOM Killed.
+```
+
+Este sera uno de los principales errores que encontraremos en nuestro archivo de errores "#SBATCH -e [OUTPUT FILE]" 
 
 
