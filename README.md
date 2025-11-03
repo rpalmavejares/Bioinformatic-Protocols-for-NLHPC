@@ -258,7 +258,7 @@ $ vim standar_job.sh
 #SBATCH -p [PARTITION]
 #SBATCH -n [NUMBER OF NODES]
 #SBATCH -c [NUMBER OF CPU]
-#SBATCH --mem= [RAM MEMORY IN GB]
+#SBATCH --mem=[RAM MEMORY IN GB]
 #SBATCH -o [ERROR FILE] 
 #SBATCH -e [OUTPUT FILE]
 #SBATCH -t [EXECUTION TIME]
@@ -302,31 +302,65 @@ Revisemos ahora cada uno de los parametros:<br>
                                     la mayor parte de las tools en Bioinformatica solo escalan hasta 12 o 20 CPUS, con algunas
                                     exepciones llegando a los 40 CPU.
                                     Pedir mas no nos dara una ventaja real de tiempo de ejucion. Al contrario, perderemos
-                                    mas tiempo esperando que se liberen los recursos que ejuctar las tareas con la mitad de CPUs. 
+                                    mas tiempo esperando que se liberen los recursos que ejuctar las tareas con la mitad
+                                    de CPUs.
+                                   - El formato de esta variable es: Numeros enteros del 1 al 256, dependiendo de cada
+                                   partición:
+                                   Limite CPU particion main      = 256
+                                   Limite CPU particion general   =  44
+                                   Limite CPU particion largemem  =  44
 ```
 
 
 ```
-#SBATCH --mem= [RAM MEMORY IN GB] : 
+#SBATCH --mem= [RAM MEMORY IN GB] : Este parametro reserva la cantidad de memoria RAM que necesitara nuestra tool.
+                                    La cantidad de RAM se debe establecer en relación al NODO que se esta reservando,
+                                    es decir, no es posible reservar 200GB de RAM en la partición "general" ni 1TB de RAM
+                                    en la particion "largemem".
+                                    El equipo del NLHPC recomienda utilizar a lo maximo 5GB de RAM por CPU, aunque esta
+                                    recomendación es casi inutilizable en Bioinformatica. En nuestro caso, existiran tools
+                                    que utilizaran 200 a 400Gb de RAM, pero se ejecutaran solo en 20 a 40 CPU.
+                                    Mas adelante veremos algunos ejemplos de ejecución.
+                                   - El formato de esta variable es: Numeros enteros del 1 al 256, seguido del sufijo GB,
+                                   dependiendo de cada partición:
+                                   Limite RAM particion main      = 710GB
+                                   Limite RAM particion general   = 175GB
+                                   Limite RAM particion largemem  = 710GB
+
+   
 ```
 
-
-
 ```
-#SBATCH -o [ERROR FILE] :
-```
-
-
-
-
-```
-#SBATCH -e [OUTPUT FILE] :
+#SBATCH -o [ERROR FILE] :           Este archivo contendra la salida de errores de la ejecucion de nuestra tool.
+                                    Aca podremos revisar si nuestra ejecución fue exitosa o si existio algun problema
+                                    particular que produjo la terminacion forsoza de nuestro job.
+                                    Es importante siempre configurar este archivo, pues es la unica forma real de
+                                    reconocer errores para futuras ejecuciones
 ```
 
 ```
-#SBATCH -t [EXECUTION TIME] :
+#SBATCH -e [OUTPUT FILE] :          Este archivo contiene la salida por consola de nuestra tool. Cuando la
+                                    herramienta que estamos tratando de ejecutar no tiene configurado un
+                                    archivo de output, la salida de nuestro programa sera escrita aqui. La mayor
+                                    parte de los archivos output sera un mensage propio de cada tool con informacion
+                                    y tiempo de ejecucion.
 ```
 
+```
+#SBATCH -t [EXECUTION TIME] :      Este parametro a sido recientemente introducido en el año 2025 y reserva el tiempo de
+                                   ejecucion de nuestra tarea. No es necesario ser extremadamente exacto en los tiempos de
+                                   ejecucion, pero generalmente podemos utilizar horas o dias sin mayores cambios de esta
+                                   variable.
+                                   Si nuestra tarea supera el tiempo reservado, esta se cancelara automaticamente, y
+                                   tendremos que volver a lanzarla desde el inicio.
+                                   - El formato de esta variable es: dd-hh:mm:ss
+                                   - Un ejemplo para 1 dia, 3 horas y 20 minutos de ejecución seria: 1-03:20:00
+```
+```
+#SBATCH --mail-user=your-email-here@gmail.com : Estas Variables son opcionales y generaran un correo automatico con  
+#SBATCH --mail-type=ALL                         información de nuestra tarea, este se encuentre en "ESPERA", "EJECUCION".
+                                                "TAREA CANCELADA", "TAREA TERMIANDA", entre otros.
+```
 
 
 
