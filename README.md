@@ -325,9 +325,9 @@ Aca-nuestro-programa
                                   La cantidad de RAM se debe establecer en relación al NODO que se está reservando;
                                   es decir, no es posible reservar 200 GB de RAM en la partición "general" ni 1 TB de RAM
                                   en la partición "largemem". El equipo del NLHPC recomienda utilizar a lo máximo 5 GB de
-                                  RAM por CPU, aunque esta recomendación es casi inutilizable en Bioinformática. En nuestro caso,
-                                  existirán herramientas que utilizarán 200 a 400 GB de RAM, pero se ejecutarán solo en 20 a
-                                  40 CPU.
+                                  RAM por CPU, aunque esta recomendación es casi inutilizable en Bioinformática.
+                                  En nuestro caso, existirán herramientas que utilizarán 200 a 400 GB de RAM, pero se
+                                  ejecutarán solo en 20 a 40 CPU.
                                   Más adelante veremos algunos ejemplos de ejecución. Formato: Números enteros del 1 al 710,
                                   seguido del sufijo GB, dependiendo de cada partición:
                                   Límite RAM partición main = 710 GB;
