@@ -366,7 +366,7 @@ $ vim standar_job.sh
 ```
 #SBATCH --mail-user=your-email-here@examp.com : Estas Variables son opcionales y generaran un correo automatico con  
 #SBATCH --mail-type=ALL                         información de nuestra tarea, este se encuentre en "ESPERA", "EJECUCION".
-                                                "TAREA CANCELADA", "TAREA TERMIANDA", entre otros.
+                                                "TAREA CANCELADA", "TAREA TERMINADA", entre otros.
 ```
 
 
