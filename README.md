@@ -485,7 +485,11 @@ Estos son algunos ejemplos de las tareas con mayor cantidad de recursos que he t
 Cabe destacar que la regla de 1 CPU por cada 5GB de RAM no aplica para ninguno de los programas listados. Esta regla es mas bien una recomendación de eficiendia en programas altamente revisados, y lamentablemente, no aplica para la mayoria de herramientas bioinformáticas.
 Mientras utilizemos rangos de CPU y RAM que no se salgan de extremos, como por ejemplo, ejecutar una tool single thread con 50 CPU y 700GB de RAM, no deberiamos tener mayores problemas.
 
+###########################################################################################################
+
 #### Como recordatorio, todas las tareas / jobs, tienen un maximo tiempo de ejecucion de 30 DIAS. Luego de esto, sin importar el tiempo pedido, la tarea sera cancelada automaticamente ####
+
+###########################################################################################################
 
 ¿Y que hacemos si nuestra tool necesita correr por mas de 30 dias y no queremos que se cancele automaticamente?
 
@@ -496,7 +500,7 @@ Para estas exepciones y otras, podemos enviar un correo a soporte@nlhpc.cl y env
 
 ## 6. Errores de ejecución de tareas / jobs. <br>
 
-Ahora, revisaremos u
+En un mundo perfecto, todas nuestras tareas correran en el tiempo asignado y finalizaran sin ningun inconveniente. Mientras eso no exista, revisemos algunos de los errores mas frecuentes, y como solucionarlos.
 
 ### 6.1 OOM_KILL EVENT. Some of the step tasks have been OOM Killed. ###
 
