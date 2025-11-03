@@ -262,6 +262,8 @@ $ vim standar_job.sh
 #SBATCH -o [ERROR FILE] 
 #SBATCH -e [OUTPUT FILE]
 #SBATCH -t [EXECUTION TIME]
+#SBATCH --mail-user=your-email-here@examp.com
+#SBATCH --mail-type=ALL 
 ```
 Revisemos ahora cada uno de los parametros:<br>
 
@@ -357,7 +359,7 @@ Revisemos ahora cada uno de los parametros:<br>
                                    - Un ejemplo para 1 dia, 3 horas y 20 minutos de ejecución seria: 1-03:20:00
 ```
 ```
-#SBATCH --mail-user=your-email-here@gmail.com : Estas Variables son opcionales y generaran un correo automatico con  
+#SBATCH --mail-user=your-email-here@examp.com : Estas Variables son opcionales y generaran un correo automatico con  
 #SBATCH --mail-type=ALL                         información de nuestra tarea, este se encuentre en "ESPERA", "EJECUCION".
                                                 "TAREA CANCELADA", "TAREA TERMIANDA", entre otros.
 ```
