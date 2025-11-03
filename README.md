@@ -233,8 +233,72 @@ Java/11.0.2                 Java/1.8                    Java/23.0.2
 <br>
 <br>
 
-## 4. Ejecución de tares / Jobs, particiones del NLHPC y solicitud de recursos en la cola de procesos.<br>
+## 4. Ejecución de tareas / Jobs, particiones del NLHPC y solicitud de recursos en la cola de procesos.<br>
 
+### 4.1 Ejecución de tareas / Jobs <br>
+
+Todas las tareas que necesitemos ejecutar en el NLHPC deben entrar en la cola de procesos a travez de un archivo de ejecución.
+Ejecutar tareas directamente en en consola, sin pasar por la cola de procesos, tiene un tiempo limite maximo de ejecucion de 30 minutos.
+Lo ideal es siempre utilizar la cola de procesos, puesto que correr directamente desde la consola utiliza los recuros del sistema de login, el cual relentiza toda la navegación en el sitema NLHPC.
+
+Tareas pequeñas como parsear archivos, uso de "grep" o "awk" se pueden realizar perfectamente en la consola de login. Tareas como ensambles, anotaciones, u otros que requieran mas de un CPU o bastante memoria RAM estan prohibidos.
+
+En el caso que requiramos ejecutar una tarea en la cola de procesos, para ello necesitaremos un archivo de ejecución. A continuacion tendremos uno basico que nos servira para la mayoria de nuestras tareas.
+
+1) Primero, debemos crear un archivo con un editor de texto, para ello usaremos VIM.
+
+```
+$ vim standar_job.sh
+```
+
+2) Luego dentro del archivo podremos escribir la siguiente configuración:
+   
+```
+#SBATCH -J [JOB_NAME]
+#SBATCH -p [PARTITION]
+#SBATCH -n [NUMBER OF NODES]
+#SBATCH -c [NUMBER OF CPU]
+#SBATCH --mem= [RAM MEMORY IN GB]
+#SBATCH -o [ERROR FILE] 
+#SBATCH -e [OUTPUT FILE]
+#SBATCH -t [EXECUTION TIME]
+```
+Revisemos ahora cada uno de los parametros:<br>
+
+```
+#SBATCH -J [JOB_NAME] : Aca ira el nombre de nuestra tarea. Utilizar nombres cortos y faciles de identificar es lo recomendado <br>
+------------------------
+#SBATCH -p [PARTITION] : En este campo ira la particion del NLHPC al cual enviaremos nuestra tarea.
+                           Actualmente existen 6 particiones que los usuarios pueden utilzar. Las caracteristicas de cada particion se encuentran en https://dashboard.nlhpc.cl/
+                           estas particiones son:
+
+    main
+    general
+    largemem
+    mi210
+    mi100
+    v100
+------------------------
+
+<br>
+#SBATCH -n [NUMBER OF NODES]: 
+<br>
+------------------------
+#SBATCH -c [NUMBER OF CPU] :
+<br>
+------------------------
+#SBATCH --mem= [RAM MEMORY IN GB] : 
+<br>
+------------------------
+#SBATCH -o [ERROR FILE] :
+<br>
+------------------------
+#SBATCH -e [OUTPUT FILE] :
+<br>
+------------------------
+#SBATCH -t [EXECUTION TIME] :
+ ```
+asda
 
 
 
