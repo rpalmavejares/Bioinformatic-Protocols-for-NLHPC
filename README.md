@@ -7,16 +7,17 @@ Esta infraestructura está al servicio de la comunidad y puede ser utilizada en 
 Durante el transcurso de su servicio, a podido ayudar al desarrollo de la ciencia de datos del genoma humano, dar sequimiento a enfermedades como el coronavirus, y acelerado descrubrimientos importantes tanto en desiertos, oceanos y medio ambiente.
 Ejemplos notables de este apoyo a la ciencia se pueden observar en publicaciones tales como:
 <br>
-[Genomes of the Orestias pupfish from the Andean Altiplano shed light on their evolutionary history and phylogenetic relationships within Cyprinodontiformes](https://doi.org/10.1186/s12864-024-10416-w)
+*   [Genomes of the Orestias pupfish from the Andean Altiplano shed light on their evolutionary history and phylogenetic relationships within Cyprinodontiformes](https://doi.org/10.1186/s12864-024-10416-w)
 <br>
-[From sewage to genomes: Expanding our understanding of the urban and semi-urban wastewater RNA virome](https://doi.org/10.1016/j.envres.2025.121509)
+*   [From sewage to genomes: Expanding our understanding of the urban and semi-urban wastewater RNA virome](https://doi.org/10.1016/j.envres.2025.121509)
 <br>
-[Fine Mapping Using Whole-Genome Sequencing Confirms Anti-Müllerian Hormone as a Major Gene for Sex Determination in Farmed Nile Tilapia (Oreochromis niloticus L.)](https://doi.org/10.1534/g3.119.400297)
+*   [Fine Mapping Using Whole-Genome Sequencing Confirms Anti-Müllerian Hormone as a Major Gene for Sex Determination in Farmed Nile Tilapia (Oreochromis niloticus L.)](https://doi.org/10.1534/g3.119.400297)
 <br>
-[Insights into neutralizing antibody responses in individuals exposed to SARS-CoV-2 in Chile](https://doi.org/10.1126/sciadv.abe6855)
+*   [Insights into neutralizing antibody responses in individuals exposed to SARS-CoV-2 in Chile](https://doi.org/10.1126/sciadv.abe6855)
 <br>
-[Nutrient Scarcity in a New Defined Medium Reveals Metabolic Resistance to Antibiotics in the Fish Pathogen Piscirickettsia salmonis](https://doi.org/10.3389/fmicb.2021.734239))
+*   [Nutrient Scarcity in a New Defined Medium Reveals Metabolic Resistance to Antibiotics in the Fish Pathogen Piscirickettsia salmonis](https://doi.org/10.3389/fmicb.2021.734239))
 <br>
+
 No obstante, el acceso y uso del NLHPC se puede percibir como una barrera inpenetrable para nuevos usuarios, los cuales tienen que batallar no solo con el entorno UNIX, sino también, con el uso específico de estas tecnologías que distan mucho del manejo diario de nuestros computadores personales.
 
 Para poder enfrentar este desafío, se ha preparado esta guía para orientar tanto a nuevos investigadores como usuarios antiguos, la cual permitira utilizar de manera sencilla y eficiente las instalaciones del NLHPC.
