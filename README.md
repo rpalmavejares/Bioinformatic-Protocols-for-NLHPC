@@ -8,13 +8,9 @@ Durante el transcurso de su servicio, a podido ayudar al desarrollo de la cienci
 Ejemplos notables de este apoyo a la ciencia se pueden observar en publicaciones tales como:
 <br>
 *   [Genomes of the Orestias pupfish from the Andean Altiplano shed light on their evolutionary history and phylogenetic relationships within Cyprinodontiformes](https://doi.org/10.1186/s12864-024-10416-w)
-<br>
 *   [From sewage to genomes: Expanding our understanding of the urban and semi-urban wastewater RNA virome](https://doi.org/10.1016/j.envres.2025.121509)
-<br>
-*   [Fine Mapping Using Whole-Genome Sequencing Confirms Anti-Müllerian Hormone as a Major Gene for Sex Determination in Farmed Nile Tilapia (Oreochromis niloticus L.)](https://doi.org/10.1534/g3.119.400297)
-<br>
+*    [Fine Mapping Using Whole-Genome Sequencing Confirms Anti-Müllerian Hormone as a Major Gene for Sex Determination in Farmed Nile Tilapia (Oreochromis niloticus L.)](https://doi.org/10.1534/g3.119.400297)
 *   [Insights into neutralizing antibody responses in individuals exposed to SARS-CoV-2 in Chile](https://doi.org/10.1126/sciadv.abe6855)
-<br>
 *   [Nutrient Scarcity in a New Defined Medium Reveals Metabolic Resistance to Antibiotics in the Fish Pathogen Piscirickettsia salmonis](https://doi.org/10.3389/fmicb.2021.734239))
 <br>
 
