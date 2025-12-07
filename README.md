@@ -751,6 +751,7 @@ Submitted batch job 00000N
 ###########################################################################################################
 
 Por lo general, se utilizan llamadas de entre 50 a 100 tareas por cada archivo de ejecución de grupo, por lo que es necesario separar llamadas de mas de 100 tareas en grupos de este tamaño. En el caso de tener 500 tareas, generar 5 archivos con grupos de 100 llamadas seria óptimo.
+No se recomienda tener mas de 100 tareas en la cola de procesos, por más que tengamos la capacidad de realizar estas 100 tareas al mismo tiempo.
 <br>
 
 ### 5.2 Monitoreo de tareas
