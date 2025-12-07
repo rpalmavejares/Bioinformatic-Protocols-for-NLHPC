@@ -84,8 +84,7 @@ En el caso de que la cantidad de horas de cómputo solicitadas sea muy por debaj
 
 Para no repetir una nueva solicitud de horas de cómputo cada 4 o 6 meses, lo ideal es utilizar la información obtenida en la notificación del NLHPC y reajustar la petición para que coincida con el periodo de 12 meses.
 
-#### El cobro de horas de cómputo se realiza sobre el uso real, y no sobre las horas solicitadas en la creación de cuentas. ####
-<br>
+#### El cobro de horas de cómputo se realiza sobre el uso real, y no sobre las horas solicitadas en la creación de cuentas. #### <br>
 ### 1.3 CPUs y Storage
 
 Al crear una nueva cuenta en el NLHPC, si no se especifica la cantidad de recursos de CPU y Almacenamiento, cada cuenta tendrá por defecto 88 CPU y 120 GB de Almacenamiento (Storage).
