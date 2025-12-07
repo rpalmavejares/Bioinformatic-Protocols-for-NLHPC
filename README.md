@@ -890,7 +890,7 @@ En el caso de que relancemos nuestra tarea, y este error vuelva a ocurrir, habr�
 
 ## 👤 Autor
 
-**Ricardo Palma Véjares** :e-mail: [rpalmavejares@gmail.com](mailto:rpalmavejares@gmail.com)
+**Ricardo Palma Véjares** :incoming_envelope: [rpalmavejares@gmail.com](mailto:rpalmavejares@gmail.com)
 
 
 
