@@ -1,5 +1,9 @@
 # Bioinformatic-Protocols-for-NLHPC
-Documentación con Tips y Buenas Practicas para el uso del NLHPC para tareas de Bioinformática y/o similares<br>
+#### Documentación con Tips y Buenas Practicas para el uso del NLHPC para tareas de Bioinformática y/o similares<br>
+
+El servicio del Laboratorio Nacional de Computación de Alto Rendimiento o NLHPC[url:https://www.nlhpc.cl/] 
+
+
 
 ## Tabla de Contenidos
 * [1. Creación de cuentas, solicitudes de horas de computo, CPUs y Storage.](#1-Creación-de-cuentas-solicitudes-de-horas-de-computo-CPU-y-Storage.)
