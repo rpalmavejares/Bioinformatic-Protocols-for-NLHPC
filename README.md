@@ -2,10 +2,29 @@
 Documentación con Tips y Buenas Practicas para el uso del NLHPC para tareas de Bioinformática y/o similares<br>
 
 ## Tabla de Contenidos
-*   [1. Creación de cuentas, solicitudes de horas de computo, CPUs y Storage.](#1-Creación-de-cuentas-solicitudes-de-horas-de-computo-CPU-y-Storage.)
-*   [Instalación](#instalacion)
-*   [Uso](#uso)
-*   [Contribución](#contribucion)
+* [1. Creación de cuentas, solicitudes de horas de computo, CPUs y Storage.](#1-Creación-de-cuentas-solicitudes-de-horas-de-computo-CPU-y-Storage.)
+    * [1.1 Creación de cuentas](1.1-Creación-de-cuentas)
+    * [1.2 Solicitudes de horas de computo.](1.2-Solicitudes-de-horas-de-computo.)
+    * [1.3 CPUs y Storage](1.3-CPUs-y-Storage)
+* [2. Login al NLHPC.](2.-Login-al-NLHPC.)
+* [3. Instalación de software mediante gestor de paquetes, Modo SUDO y Module LOAD](3.-Instalación-de-software-mediante-gestor-de-paquetes,-Modo-SUDO-y-Module-LOAD)
+    * [3.1 Instalación de software mediante gestor de paquetes](3.1-Instalación-de-software-mediante-gestor-de-paquetes)
+    * [3.2 Modo SUDO](3.2-Modo-SUDO)
+    * [3.3 Module Load](3.3-Module-Load)
+* [4. Archivo de ejecución de tareas / Jobs en la cola de procesos y solicitud de recursos](4.-Archivo-de-ejecución-de-tareas-/-Jobs-en-la-cola-de-procesos-y-solicitud-de-recursos)
+    * [4.1 Archivo de ejecución de tareas / Jobs](4.1-Archivo-de-ejecución-de-tareas-/-Jobs)
+    * [4.2 Solicitud de Recursos](4.2-Solicitud-de-Recursos)
+* [5. Ejecución de tareas / jobs, Monitoreo de tareas y Cancelación de tareas](5.-Ejecución-de-tareas-/-jobs,-Monitoreo-de-tareas-y-Cancelación-de-tareas)
+    * [5.1 Ejecución de tareas](5.1-Ejecución-de-tareas)
+        * [5.1.1 Ejecución lineal](5.1.1-Ejecución-lineal)
+        * [5.1.2 Ejecución en paralelo individual](5.1.2-Ejecución-en-paralelo-individual)
+        * [5.1.3 Ejecución en paralelo por grupo](5.1.3-Ejecución-en-paralelo-por-grupo)
+    * [5.2 Monitoreo de tareas](5.2-Monitoreo-de-tareas)
+    * [5.3 Cancelación de tareas](5.3-Cancelación-de-tareas)
+* [6. Errores de ejecución de tareas / jobs.](6.-Errores-de-ejecución-de-tareas-/-jobs.)
+    * [6.1 error: *** JOB XXXXXXXXX ON mn00P CANCELLED AT YEAR-MONTH-DAYT:HH:MM:SS ***](6.1-error:-***-JOB-XXXXXXXXX-ON-mn00P-CANCELLED-AT-YEAR-MONTH-DAYT:HH:MM:SS-***)
+    * [6.2 OOM_KILL EVENT. Some of the step tasks have been OOM Killed.](6.2-OOM_KILL-EVENT.-Some-of-the-step-tasks-have-been-OOM-Killed.)
+    * [6.3 Segmentation fault (core dumped). Aborted (core dumped)](6.3-Segmentation-fault-(core-dumped).-Aborted-(core-dumped))
 
 ## 1. Creación de cuentas, solicitudes de horas de computo, CPUs y Storage.
 
@@ -46,7 +65,8 @@ En el caso de que la cantidad de horas de cómputo solicitadas sea muy por debaj
 
 Para no repetir una nueva solicitud de horas de cómputo cada 4 o 6 meses, lo ideal es utilizar la información obtenida en la notificación del NLHPC y reajustar la petición para que coincida con el periodo de 12 meses.
 
-#### El cobro de horas de cómputo se realiza sobre el uso real, y no sobre las horas solicitadas en la creación de cuentas. ####<br>
+#### El cobro de horas de cómputo se realiza sobre el uso real, y no sobre las horas solicitadas en la creación de cuentas. ####
+<br>
 ### 1.3 CPUs y Storage
 
 Al crear una nueva cuenta en el NLHPC, si no se especifica la cantidad de recursos de CPU y Almacenamiento, cada cuenta tendrá por defecto 88 CPU y 120 GB de Almacenamiento (Storage).
@@ -160,7 +180,9 @@ En nuestro correo de solicitud debemos agregar:
 > El *link de la tool* a instalar. <br>
 > El o los *usuarios* a los que se desea instalar la tool.
 
-En el caso de que nuestra tool sea requerida por todo nuestro Team, existe la posibilidad de implementar la herramienta como Modulo, y que quede en el registro de tools instaladas del NLHPC para que pueda ser cargada por cualquier usuario, inclusive fuera de nuestro Team.<br>
+En el caso de que nuestra tool sea requerida por todo nuestro Team, existe la posibilidad de implementar la herramienta como Modulo, y que quede en el registro de tools instaladas del NLHPC para que pueda ser cargada por cualquier usuario, inclusive fuera de nuestro Team.
+<br>
+
 ### 3.3 Module Load 
 
 El NLHPC tiene pre-instaladas una variedad de tools las cuales han sido testeadas y deberian ejecutarse sin problemas en cualquier cuenta del servidor.
