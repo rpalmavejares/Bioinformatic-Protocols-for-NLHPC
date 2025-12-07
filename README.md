@@ -544,7 +544,7 @@ Mientras utilicemos rangos de CPU y RAM que no se salgan de extremos, como por e
 
 ¿Y qué hacemos si nuestra herramienta necesita correr por más de 30 días y no queremos que se cancele automáticamente?
 
-Para estas excepciones y otras, podemos enviar un correo a soporte@nlhpc.cl y enviar nuestro *JOB_ID* de la tarea en ejecución para pedir una extensión de tiempo.
+Para estas excepciones y otras, podemos enviar un correo a soporte@nlhpc.cl y enviar nuestro *JOBID* de la tarea en ejecución para pedir una extensión de tiempo.
 
 <br>
 <br>
@@ -856,7 +856,7 @@ Con este correo, podemos verificar el comportamiento de nuestra tarea y corregir
 
 ###########################################################################################################
 
-Para este tipo de casos, debemos enviar un correo a soporte indicando nuestro problema. Luego se nos pedirá ejecutar la tarea nuevamente y enviar el JOB_ID para que esta tarea sea excluida de la cancelación automática y entre a la "White List" de procesos.
+Para este tipo de casos, debemos enviar un correo a soporte indicando nuestro problema. Luego se nos pedirá ejecutar la tarea nuevamente y enviar el JOBID para que esta tarea sea excluida de la cancelación automática y entre a la "White List" de procesos.
 
 
 <br>
