@@ -44,7 +44,7 @@ Para poder enfrentar este desafío, se ha preparado esta guía para orientar tan
     * [6.1 error JOB XXXXXXXXX ON mn00P CANCELLED AT (DATE)](6.1-error-JOB-XXXXXXXXX-ON-mn00P-CANCELLED-AT-(DATE).)
     * [6.2 OOM_KILL EVENT. Some of the step tasks have been OOM Killed.](6.2-OOM_KILL-EVENT.-Some-of-the-step-tasks-have-been-OOM-Killed.)
     * [6.3 Segmentation fault (core dumped). Aborted (core dumped)](6.3-Segmentation-fault-(core-dumped).-Aborted-(core-dumped))
-* [7. Agradecimientos al NLHPC en publicaciones]()
+* [7. Agradecimientos al NLHPC en publicaciones](7.-Agradecimientos-al-NLHPC-en-publicaciones)
 
 ## 1. Creación de cuentas, solicitudes de horas de computo, CPUs y Storage.
 
