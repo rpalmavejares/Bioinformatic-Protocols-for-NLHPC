@@ -409,6 +409,7 @@ Pero a falta de tiempo, he aquí algunos ejemplos:
 ### TAREAS DE ASSEMBLY. 1 Metegenoma grande de 200+ Millones de Reads. Tool: MEGAHIT ###
 
 ```
+#SBATCH -J Assembly
 #SBATCH -p main o largemem
 #SBATCH -n 1
 #SBATCH -c [12-20]
@@ -419,6 +420,7 @@ Pero a falta de tiempo, he aquí algunos ejemplos:
 ### TAREAS DE ANOTACION.  Mismo metagenoma, contra una base de datos de 50GB. Tool: EggNOGMapper ###
 
 ```
+#SBATCH -J annotation
 #SBATCH -p main
 #SBATCH -n 1
 #SBATCH -c [8 a 12]
@@ -429,6 +431,7 @@ Pero a falta de tiempo, he aquí algunos ejemplos:
 ### CLUSTERING DE GENES.  400+ Millones de CDS. Tool: MMseqs2 ###
 
 ```
+#SBATCH -J cluster
 #SBATCH -p main
 #SBATCH -n 1
 #SBATCH -c [12 a 20]
@@ -439,6 +442,7 @@ Pero a falta de tiempo, he aquí algunos ejemplos:
 ### CREACION DE MAGS / BINNING. Tool: SemiBin2 ### 
 
 ```
+#SBATCH -J binning
 #SBATCH -p main
 #SBATCH -n 1
 #SBATCH -c [12 a 20]
@@ -449,6 +453,7 @@ Pero a falta de tiempo, he aquí algunos ejemplos:
 ### ANOTACION DE MAGS. 1 MAG. Tool: Bakta: ###
 
 ```
+#SBATCH -J mag_annot
 #SBATCH -p main
 #SBATCH -n 1
 #SBATCH -c 2
@@ -459,6 +464,7 @@ Pero a falta de tiempo, he aquí algunos ejemplos:
 ### ANOTACION DE MAGS. 1000+ MAG. Tool: DRAM: ###
 
 ```
+#SBATCH -J mag_annot
 #SBATCH -p main
 #SBATCH -n 1
 #SBATCH -c [12 a 20]
@@ -469,6 +475,7 @@ Pero a falta de tiempo, he aquí algunos ejemplos:
 ### PARSEO DE BASES DE DATOS / SCRIPTS DE PYTHON, ENTRE OTROS: ###
 
 ```
+#SBATCH -J job
 #SBATCH -p general o main
 #SBATCH -n 1
 #SBATCH -c 1
@@ -495,8 +502,278 @@ Para estas excepciones y otras, podemos enviar un correo a soporte@nlhpc.cl y en
 <br>
 <br>
 
-## 5. Ejecución de tareas / jobs. Monitoreo <br>
+## 5. Ejecución de tareas / jobs, Monitoreo de tareas y Cancelación de tareas <br>
 
+### 5.1 Ejecución de tareas
+
+
+Una vez que ya tenemos creado nuestro archivo de ejecución de tareas y alocado nuestros recursos, debemos ahora lista y ejecutar nuestras tareas.
+
+Para ello, tomaremos nuevamente nuestro archivo de ejemplo.
+
+
+```
+#SBATCH -J python_script
+#SBATCH -p main
+#SBATCH -n 1
+#SBATCH -c 1
+#SBATCH --mem=[10GB - 50GB]
+#SBATCH -t 1-00:00:00
+
+python my_tool.py my_input_file.tsv > output_one.tsv
+
+python my_second_tool.py output_one.tsv > output_two.tsv
+
+echo "Task Completed"
+
+
+```
+En este caso, nuestro archivo de ejecución tratara de ejecutar un script de python llamado my_tool.py y este a su vez requerira un archivo de entrada llamado my_input_file.tsv. Este script generara un arvhivo de salida output_one.tsv que sera utilizado ahora como input por nuestro segundo script my_second_tool.py y generara la salida final output_two.tsv.
+
+Como se puede observar, se pueden listar mas de una ejecución o linea de comando en nuestro archivo de ejecución de tareas, done incluso podremos construir pipelines completos para tareas especificas.
+
+Una vez que tengamos todos los comandos a ejecutar, guardaremos nuestro archivo de ejecución, en este caso, nuetro ejemplo se llamará, standar.sh
+
+```
+standar.sh
+
+```
+
+Para poder ejecutar ahora nuestros comandos dentro del archivo standar.sh, lo que debemos hacer es llamar en la consola a la función sbatch con el nombre de nuestro archivo de ejecución y luego presionar enter.
+
+```
+$ sbatch standar.sh
+```
+
+Si nuetro archivo de ejecucioón esta correcto, nos aparecera el mensaje:
+
+```
+Submitted batch job XXXXXXXXXXXXXXX
+```
+
+Este numero de job es importante, puesto que nos permitira rastrear el status de nuestra tarea a futuro.
+
+Pero, ¿Que pasa si quiero ejecutar mas de 1 tarea al mismo tiempo?
+
+En este caso, tenemos varias opciones. 
+
+#### 5.1.1 Ejecución lineal
+
+Para este tipo de ejecución, solo debemos escribir todos nuestros comandos juntos en el mismo archivo de ejecución de tareas, cada ejecución debajo de la siguiente, es decir:
+
+```
+#SBATCH -J python_script
+#SBATCH -p main
+#SBATCH -n 1
+#SBATCH -c 1
+#SBATCH --mem=[10GB - 50GB]
+#SBATCH -t 4-00:00:00
+
+#Primera ejecución
+
+python my_tool.py my_input_file_1.tsv > output_one_1.tsv
+python my_second_tool.py output_one_1.tsv > output_two_1.tsv
+
+# Segunda ejecución
+
+python my_tool.py my_input_file_2.tsv > output_one_2.tsv
+python my_second_tool.py output_one_2.tsv > output_two_2.tsv
+
+# Tercera ejecución
+
+python my_tool.py my_input_file_3.tsv > output_one_3.tsv
+python my_second_tool.py output_one_3.tsv > output_two_3.tsv
+
+# Cuarta ejecucióm
+
+python my_tool.py my_input_file_4.tsv > output_one_4.tsv
+python my_second_tool.py output_one_4.tsv > output_two_4.tsv
+
+echo "Task Completed"
+
+```
+
+Con este tipo de archivo de ejecución, todas las tareas se ejecutaran de manera linea, y cada comando debera esperar al anterior para ser ejecutado. Si bien es cierto, esta el la mejor forma para generar pipelines, no es muy eficiente si queremos ejecutar la misma tarea muchas veces. 
+
+###########################################################################################################
+## IMPORTANTE ##
+#### 
+Hay que recordar que si 1 sola tarea toma 1 dia en ejecutarse, ahora tendremos que solicitar 4 veces mas tiempo de ejecución. ####
+
+###########################################################################################################
+
+Pero que pasa si nuestros tiempo de ejecución son demasiado largos? es necesario esperar 7 dias por 7 ejecuciones?. Ahora veremos soluciones a este problema.
+
+#### 5.1.2 Ejecución en paralelo individual
+
+En esta ocasión modificaremos nuestro archivo de ejecución de tareas para poder hacer uso del traspaso de nombres de variables por consola, y asi, generalizar nuestros scripts.
+
+```
+#SBATCH -J python_script
+#SBATCH -p main
+#SBATCH -n 1
+#SBATCH -c 1
+#SBATCH --mem=[10GB - 50GB]
+#SBATCH -t 1-00:00:00
+
+#Ejecución estandar
+
+python my_tool.py $1.tsv > $2.tsv
+python my_second_tool.py $2.tsv > $3.tsv
+```
+
+En esta versión del script, hemos reemplazado los nombres originales, donde ahora, hemos generalizado los nombres my_input_file_N.tsv a $1, asi tambien como los archivos output_one_N.tsv por $2 y output_two_N.tsv por $3.
+
+Con ello ahora nuestra llamada al archivo de ejecución de tareas cambiara de la siguiente forma:
+
+```
+# Antiguo metodo de ejecución
+$ sbatch standar.sh
+
+# Nuevo metodo de ejecución
+$4 sbatch standar.sh my_input_file_N.tsv output_one_N.tsv output_two_N.tsv
+```
+
+Es aquí donde podemos observar la mayor ventaja del método paralelo. El unico limite de numero de tareas a llamar sera la cantidad de CPU que nuestra cuenta tenga acceso, por lo que ahora, nuestras 4 llamadas de scripts anteriores cambiará a:
+
+```
+$ sbatch standar.sh my_input_file_1.tsv output_one_1.tsv output_two_1.tsv
+Submitted batch job 000001
+$ sbatch standar.sh my_input_file_2.tsv output_one_2.tsv output_two_2.tsv
+Submitted batch job 000002
+$ sbatch standar.sh my_input_file_3.tsv output_one_3.tsv output_two_3.tsv
+Submitted batch job 000003
+$ sbatch standar.sh my_input_file_4.tsv output_one_4.tsv output_two_4.tsv
+Submitted batch job 000003
+```
+Este metodo asegurara ahora que podamos ejecutar nuestras 4 tareas al mismo tiempo, por lo que el tiempo de ejecución pasara de 4 dias, a 1 solo dia en el mejor de los casos (en el caso de que tengamos los recursos y sean asignados a nuestra cuenta).
+
+Pero ¿Que pasa si necesitamos ejecutar 100 tareas o 1000 tareasd el mismo tipo? ¿Tendremos que escribir 100 o 1000 veces en la consola los nombres de nuestros archivos?
+
+#### 5.1.3 Ejecución en paralelo por grupo
+
+La diferencia entre la la ejecución en pararelo individual y en grupo es solo 1, como manejamos la manea de llamar 100 o 1000 tareas al mismo tiempo.
+
+Para esta tarea, podemos usar el mismo archivo standar.sh anterior, por lo que aca no habran cambios, la unica diferencia es la llamada del archivo de ejecución. Para ello, generaremos un archivo BASH con todas las llamadas de ejecución que necesitemos realizar y ejecutaremos este archivo automático, es decir.
+
+
+```
+# Antiguo metodo de ejecución
+$ sbatch standar.sh my_input_file_1.tsv output_one_1.tsv output_two_1.tsv
+Submitted batch job 000001
+$ sbatch standar.sh my_input_file_2.tsv output_one_2.tsv output_two_2.tsv
+Submitted batch job 000002
+$ sbatch standar.sh my_input_file_3.tsv output_one_3.tsv output_two_3.tsv
+Submitted batch job 000003
+$ sbatch standar.sh my_input_file_4.tsv output_one_4.tsv output_two_4.tsv
+Submitted batch job 000003
+```
+
+Nuevo metodo de ejecución.
+
+1. Crear un archivo de grupo de ejecución
+```
+vim group_1.sh
+```
+2. Dentro del archivo de grupo de ejecución, escribiremos todas nuestras tareas. Dado que lo unico que cambia es el nombre de input, podemos utilizar un script simple de AWK, python o EXCEL para poder generar las llamadas.
+```
+sbatch standar.sh my_input_file_1.tsv output_one_1.tsv output_two_1.tsv
+sbatch standar.sh my_input_file_2.tsv output_one_2.tsv output_two_2.tsv
+sbatch standar.sh my_input_file_3.tsv output_one_3.tsv output_two_3.tsv
+sbatch standar.sh my_input_file_4.tsv output_one_4.tsv output_two_4.tsv
+sbatch standar.sh my_input_file_5.tsv output_one_5.tsv output_two_5.tsv
+sbatch standar.sh my_input_file_N.tsv output_one_N.tsv output_two_N.tsv
+```
+3. Finalmente llamaremos al archivo de grupo de ejecución y automaticamente, todas las llamadas se ejecutaran al mismo tiempo.
+```
+bash group_1.sh
+```
+4. Lo que veremos ahora como respuesta en la consola, sera algo como
+```
+Submitted batch job 000001
+Submitted batch job 000002
+Submitted batch job 000003
+Submitted batch job 000004
+Submitted batch job 000005
+Submitted batch job 00000N
+```
+
+###########################################################################################################
+## IMPORTANTE ##
+#### ¿Cuántas llamadas podria ejecutar al mismo tiempo? ####
+###########################################################################################################
+
+Por lo general, se utilizan llamadas de entre 50 a 100 tareas por cada archivo de ejecución de grupo, por lo que es necesario separar llamadas de mas de 100 tareas en grupos de este tamaño. En el caso de tener 500 tareas, generar 5 archivos con grupos de 100 llamadas seria óptimo.
+<br>
+
+### 5.2 Monitoreo de tareas
+
+Monitorear tareas es bastante simple, para ello podemos utilizar 2 comandos especificos. 
+El primero es:
+
+```
+$ squeue
+```
+Este comando nos dara una mirada rápida para revisar las tareas que enviamos a ejecutar y cual es su estado actual.
+Si ejecutamos este comando, y acabamos de lanzar nuestras tareas, podremos observar lo siguiente.
+```
+JOBID    PARTITION            NAME          USER        ST    TIME    NODES    NODELIST(REASON)
+000001        main    python_script   [your_user] [status]    0:00        1    [REASON:NODE_ID]
+000002        main    python_script   [your_user] [status]    0:00        1    [REASON:NODE_ID]
+000003        main    python_script   [your_user] [status]    0:00        1    [REASON:NODE_ID]
+000004        main    python_script   [your_user] [status]    0:00        1    [REASON:NODE_ID]
+000005        main    python_script   [your_user] [status]    0:00        1    [REASON:NODE_ID]
+00000N        main    python_script   [your_user] [status]    0:00        1    [REASON:NODE_ID]
+```
+
+El segundo comando es:
+
+```
+$ watch squeue
+```
+Este comando nos permitira tener una ventana permanente que se actualizará cada 2 segundos, entregandonos información en tiempo real de nuestras tareas.
+La informacón mostrada, sera exactamente la misma a la anterior.
+
+Revisemos ahora la información entregada:
+
+```
+JOBID:              Contiene el ID de nuestra tarea, este sera el mismo ID mencionado
+                    al ejecutar nuestra tarea.
+PARTITION:          Contiene el nombre de la partición donde ejecutamos nuestra tarea.  
+NAME:               Nombre de nuestra tarea.
+USER:               Nombre de nuestro usuario.
+ST:                 Estatus del job que hemos enviado, estos pueden ser:
+                    PD: Nuestra tarea esta pendiende de ejecución (pending)
+                    R:  Nuestra tarea se esta ejecutando (running)
+                    CG: Nuestra tarea esta terminando (completing)
+TIME:               Contiene el tiempo de ejecución de nuestra tarea.
+NODES:              Numero de nodos asignados a nuestra tarea.
+NODELIST(REASON):   Nodo en el cual se esta ejecutando nuestra tarea. En en caso de que
+                    nuestra tarea se encuentre en el estatus pendiente: (ST : PD ), esta
+                    columna desplegará la razón del porque esta pendiente.
+                    Resources: Nuestra tarea esta esperando que un nodo tenga los recursos
+                    que solicitamos para poder ejecutarse.
+                    Priority: Nuestra tarea esta en la cola de procesos y esta esperando
+                    a que tareas de otros usuarios terminen
+                    QOS[MaxCPULimit]: Nuestra cuenta ya esta utilizando el Maximo numero
+                    de CPU asignados a nuestro usuario y tendremos que esperar a que otras
+                    de nuestras tareas terminen
+```
+
+<br>
+
+### 5.3 Cancelación de tareas
+
+En el caso de que necesitemos cancelar o terminar forzosamente una tarea (error en el script, error en el uso de recursos, etc), podremos cancerlar solo usando su JOBID mencionado anteriormente, para ello, podremos utilizar el comando:
+
+```
+$ scancel [JOBID]
+
+Ejemplo:
+$ scancel 000001
+```
+
+Con esto, podemos eliminar esta tarea de la cola, y volver a relanzar nuestro script con las modificaciones que necesitemos.
 
 
 
@@ -532,6 +809,7 @@ Con este correo, podemos verificar el comportamiento de nuestra tarea y corregir
 ###########################################################################################################
 
 Para este tipo de casos, debemos enviar un correo a soporte indicando nuestro problema. Luego se nos pedirá ejecutar la tarea nuevamente y enviar el JOB_ID para que esta tarea sea excluida de la cancelación automática y entre a la "White List" de procesos.
+
 
 <br>
 
