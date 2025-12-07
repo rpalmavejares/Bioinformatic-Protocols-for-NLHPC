@@ -1,7 +1,21 @@
 # Bioinformatic-Protocols-for-NLHPC
 #### Documentación con Tips y Buenas Practicas para el uso del NLHPC para tareas de Bioinformática y/o similares<br>
 
-El servicio del Laboratorio Nacional de Computación de Alto Rendimiento o NLHPC[url:https://www.nlhpc.cl/] 
+El servicio del Laboratorio Nacional de Computación de Alto Rendimiento o [NLHPC](url:https://www.nlhpc.cl/) es un supercomputador a gran escala diseñado para dar respuesta a los desafíos cientificos y tecnológicos de nuestro pais.
+Esta infraestructura está al servicio de la comunidad y puede ser utilizada en áreas como Astronomía, Ingeniería, Salud y Bioinformática, siendo esta última la que exploraremos en el siguiente documento.
+
+Durante el transcurso de su servicio, a podido ayudar al desarrollo de la ciencia de datos del genoma humano, dar sequimiento a enfermedades como el coronavirus, y acelerado descrubrimientos importantes tanto en desiertos, oceanos y medio ambiente.
+Ejemplos notables de este apoyo a la ciencia se pueden observar en publicaciones tales como:
+
+[Genomes of the Orestias pupfish from the Andean Altiplano shed light on their evolutionary history and phylogenetic relationships within Cyprinodontiformes](https://doi.org/10.1186/s12864-024-10416-w)
+[From sewage to genomes: Expanding our understanding of the urban and semi-urban wastewater RNA virome](https://doi.org/10.1016/j.envres.2025.121509)
+[Fine Mapping Using Whole-Genome Sequencing Confirms Anti-Müllerian Hormone as a Major Gene for Sex Determination in Farmed Nile Tilapia (Oreochromis niloticus L.)](https://doi.org/10.1534/g3.119.400297)
+[Insights into neutralizing antibody responses in individuals exposed to SARS-CoV-2 in Chile](https://doi.org/10.1126/sciadv.abe6855)
+[Nutrient Scarcity in a New Defined Medium Reveals Metabolic Resistance to Antibiotics in the Fish Pathogen Piscirickettsia salmonis](https://doi.org/10.3389/fmicb.2021.734239))
+
+No obstante, el acceso y uso del NLHPC se puede percibir como una barrera inpenetrable para nuevos usuarios, los cuales tienen que batallar no solo con el entorno UNIX, sino también, con el uso específico de estas tecnologías que distan mucho del manejo diario de nuestros computadores personales.
+
+Para poder enfrentar este desafío, se ha preparado esta guía para orientar tanto a nuevos investigadores como usuarios antiguos, la cual permitira utilizar de manera sencilla y eficiente las instalaciones del NLHPC.
 
 
 
