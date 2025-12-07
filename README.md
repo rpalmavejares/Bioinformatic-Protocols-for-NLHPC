@@ -22,7 +22,7 @@ Documentación con Tips y Buenas Practicas para el uso del NLHPC para tareas de 
     * [5.2 Monitoreo de tareas](5.2-Monitoreo-de-tareas)
     * [5.3 Cancelación de tareas](5.3-Cancelación-de-tareas)
 * [6. Errores de ejecución de tareas / jobs.](6.-Errores-de-ejecución-de-tareas-/-jobs.)
-    * [6.1 error: *** JOB XXXXXXXXX ON mn00P CANCELLED AT YEAR-MONTH-DAYT:HH:MM:SS ***](6.1-error:-***-JOB-XXXXXXXXX-ON-mn00P-CANCELLED-AT-YEAR-MONTH-DAYT:HH:MM:SS-***)
+    * [6.1 error: *** JOB XXXXXXXXX ON mn00P CANCELLED AT YEAR-MONTH-DAYT:HH:MM:SS ***](6.1-error:-JOB-XXXXXXXXX-ON-mn00P-CANCELLED-AT-YEAR-MONTH-DAYT-HH-MM-SS)
     * [6.2 OOM_KILL EVENT. Some of the step tasks have been OOM Killed.](6.2-OOM_KILL-EVENT.-Some-of-the-step-tasks-have-been-OOM-Killed.)
     * [6.3 Segmentation fault (core dumped). Aborted (core dumped)](6.3-Segmentation-fault-(core-dumped).-Aborted-(core-dumped))
 
