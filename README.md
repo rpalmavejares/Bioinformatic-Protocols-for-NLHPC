@@ -893,9 +893,9 @@ En el caso de que relancemos nuestra tarea, y este error vuelva a ocurrir, habr�
 Una vez que hayamos terminado nuestros análisis y podamos finalmente escribir nuestros manuscritos, es imporante agradecer el uso del NLHPC en nuestros textos. Esto debido a que el supercomputador recibe fondos estatales para poder seguir operando y justifica sus gastos operacionales con las contribuciones a la ciencia.
 Para ello, en el apartado de **Acknowledgements** de nuestra publicación debemos escribir:
 
-```
-Experiments presented in this paper were carried out using the supercomputing infrastructure of NLHPC at CMM, Universidad de Chile (see https://www.nlhpc.cl/infraestructura/)
-```
+
+### "Experiments presented in this paper were carried out using the supercomputing infrastructure of NLHPC at CMM, Universidad de Chile (see https://www.nlhpc.cl/infraestructura/)"
+
 Este sera siempre el paso final al ejecutar nuestras laborales en el NLHPC.
 
 
