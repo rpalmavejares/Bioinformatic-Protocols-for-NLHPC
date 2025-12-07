@@ -27,8 +27,10 @@ Para poder enfrentar este desafío, se ha preparado esta guía para orientar tan
     * [1.3 CPUs y Storage](#13-cpus-y-storage)
 * [2. Login al NLHPC.](#2-login-al-nlhpc)
 * [3. Instalación de software mediante gestor de paquetes, Modo SUDO y Module LOAD](#3-instalación-de-software-mediante-gestor-de-paquetes-modo-sudo-y-module-load)
-    * [3.1 Instalación de software mediante gestor de paquetes](#31-instalación-de-software-mediante-gestor-de-paquetes)
+    * [3.1 Instalación de software mediante gestor de paquetes](#31-instalación-de-software-mediante-gestor-de-paquetes)   
     * [3.2 Modo SUDO](#32-modo-sudo)
+       * [3.2.1 Instalación local con el codigo fuente.](321-instalacion-local-con-el-codigo-fuente.)
+       * [3.2.2 Solicitud de instalación al equipo de Soporte NLHPC](322-solicitud-de-instalacion-al-equipo-de-soporte-nlhpc)
     * [3.3 Module Load](#33-module-load)
 * [4. Archivo de ejecución de tareas / Jobs en la cola de procesos y solicitud de recursos](#4-archivo-de-ejecución-de-tareas--jobs-en-la-cola-de-procesos-y-solicitud-de-recursos)
     * [4.1 Archivo de ejecución de tareas / Jobs](#41-archivo-de-ejecución-de-tareas--jobs)
@@ -162,7 +164,7 @@ sudo apt install tool
 NO son validos.<br>
 En el caso de necesitar instalar una herramienta que requiera específicamente este comando, existen 2 soluciones específicas:.<br>
 
-#### A. Instalación local con el codigo fuente. ####
+#### 3.2.1 Instalación local con el codigo fuente. ####
 
 Para la instalación local de nuestra herramienta, primero necesitaremos el código fuente de la misma. Por lo general, cualquier herramienta que utilice el comando SUDO tiene un código fuente, el cual se puede descargar desde la página web del software o desde GitHub. En nuestro caso, seguiremos el ejemplo de MEME Suite (https://web.mit.edu/meme/current/share/doc/install.html):
 
@@ -183,7 +185,7 @@ o
 ```
 
 En el caso de que no exista la opción de instalación del código fuente, o encontremos errores dentro del proceso, podemos utilizar la opción B.<br>
-#### B. Solicitud de instalación al equipo de Soporte NLHPC ####
+#### 3.2.2 Solicitud de instalación al equipo de Soporte NLHPC ####
 
 Cada vez que necesitemos instalar herramientas que parecen demasiado complicadas o requieren librerías que no podemos encontrar, lo mejor es realizar una solicitud al equipo de Soporte del NLHPC (soporte@nlhpc.cl) mediante un correo.
 ```
