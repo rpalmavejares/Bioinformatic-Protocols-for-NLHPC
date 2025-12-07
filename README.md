@@ -1,6 +1,12 @@
 # Bioinformatic-Protocols-for-NLHPC
 Documentación con Tips y Buenas Practicas para el uso del NLHPC para tareas de Bioinformática y/o similares<br>
 
+## Tabla de Contenidos
+*   [1. Creación de cuentas, solicitudes de horas de computo, CPUs y Storage.](#1. Creación de cuentas, solicitudes de horas de computo, CPUs y Storage.)
+*   [Instalación](#instalacion)
+*   [Uso](#uso)
+*   [Contribución](#contribucion)
+
 ## 1. Creación de cuentas, solicitudes de horas de computo, CPUs y Storage.
 
 ### 1.1 Creación de cuentas
@@ -700,7 +706,7 @@ Submitted batch job 00000N
 
 ###########################################################################################################
 ## IMPORTANTE ##
-#### ¿Cuántas llamadas podria ejecutar al mismo tiempo? ####
+#### ¿Cuántas llamadas podría ejecutar al mismo tiempo? ####
 ###########################################################################################################
 
 Por lo general, se utilizan llamadas de entre 50 a 100 tareas por cada archivo de ejecución de grupo, por lo que es necesario separar llamadas de mas de 100 tareas en grupos de este tamaño. En el caso de tener 500 tareas, generar 5 archivos con grupos de 100 llamadas seria óptimo.
