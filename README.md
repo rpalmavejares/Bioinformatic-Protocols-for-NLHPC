@@ -44,6 +44,7 @@ Para poder enfrentar este desafío, se ha preparado esta guía para orientar tan
     * [6.1 error JOB XXXXXXXXX ON mn00P CANCELLED AT (DATE)](6.1-error-JOB-XXXXXXXXX-ON-mn00P-CANCELLED-AT-(DATE).)
     * [6.2 OOM_KILL EVENT. Some of the step tasks have been OOM Killed.](6.2-OOM_KILL-EVENT.-Some-of-the-step-tasks-have-been-OOM-Killed.)
     * [6.3 Segmentation fault (core dumped). Aborted (core dumped)](6.3-Segmentation-fault-(core-dumped).-Aborted-(core-dumped))
+* [7. Agradecimientos al NLHPC en publicaciones]()
 
 ## 1. Creación de cuentas, solicitudes de horas de computo, CPUs y Storage.
 
@@ -886,6 +887,19 @@ line 76: 1624213 Segmentation fault (core dumped)
 Este error no es grave, es gravísimo, al borde de lo radiactivo y letal. Significa que, en el NODO donde estamos ejecutando nuestra tarea, una de las herramientas siendo ejecutadas hizo que el NODO completo colapsara y dejara de correr todas las tareas. Este es un fallo catastrófico como el famoso "pantallazo azul" en Windows. Es de vital importancia revisar el archivo de errores y la ejecución de la tarea para saber si fue nuestra herramienta la que generó el fallo u otra que estaba ejecutándose junto a la nuestra en el mismo NODO. Como se podrá asumir, este error termina forzosamente todas las tareas del NODO en que se estaba ejecutando, lo que no solo nos afecta a nosotros, sino al resto de los usuarios.
 
 En el caso de que relancemos nuestra tarea, y este error vuelva a ocurrir, habrá que comunicarse con soporte@nlhpc.cl y pedir el uso exclusivo de un NODO, así como el monitoreo extenso de nuestro job. Así, podemos ver cómo solucionar el problema. En el peor de los casos, no podremos seguir ejecutando nuestro programa. En el mejor de los casos, y mayoritariamente por experiencia, bajar el número de CPU y aumentar la RAM elimina satisfactoriamente este error. El tiempo de ejecución aumentará, pero es mejor terminar más tarde que no terminar. En otras ocasiones, hay herramientas que por defecto, internamente llaman a más de 1 CPU para tareas secundarias, por lo que es esencial conocer los requerimientos internos de cada ejecución. Este tipo de requerimientos fallidos también puede provocar un "core-dumped".
+
+## 7. Agradecimientos al NLHPC en publicaciones
+
+Una vez que hayamos terminado nuestros análisis y podamos finalmente escribir nuestros manuscritos, es imporante agradecer el uso del NLHPC en nuestros textos. Esto debido a que el supercomputador recibe fondos estatales para poder seguir operando y justifica sus gastos operacionales con las contribuciones a la ciencia.
+Para ello, en el apartado de **Acknowledgements** de nuestra publicación debemos escribir:
+
+```
+Experiments presented in this paper were carried out using the supercomputing infrastructure of NLHPC at CMM, Universidad de Chile (see https://www.nlhpc.cl/infraestructura/)
+```
+Este sera siempre el paso final al ejecutar nuestras laborales en el NLHPC.
+
+
+
 
 ## 👤 Autor
 
