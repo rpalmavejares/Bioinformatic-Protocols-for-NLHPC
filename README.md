@@ -4,7 +4,7 @@
 El servicio del Laboratorio Nacional de Computación de Alto Rendimiento o [NLHPC](url:https://www.nlhpc.cl/) es un supercomputador a gran escala diseñado para dar respuesta a los desafíos cientificos y tecnológicos de nuestro pais.
 Esta infraestructura está al servicio de la comunidad y puede ser utilizada en áreas como Astronomía, Ingeniería, Salud y Bioinformática, siendo esta última la que exploraremos en el siguiente documento.
 
-Durante el transcurso de su servicio, a podido ayudar al desarrollo de la ciencia de datos del genoma humano, dar sequimiento a enfermedades como el coronavirus, y acelerado descrubrimientos importantes tanto en desiertos, oceanos y medio ambiente.
+Durante el transcurso de su servicio, el NLHPC a podido ayudar al desarrollo de la ciencia de datos del genoma humano, dar sequimiento a enfermedades como el coronavirus, y acelerado descrubrimientos importantes tanto en desiertos, oceanos y medio ambiente.
 Ejemplos notables de este apoyo a la ciencia se pueden observar en publicaciones tales como:
 <br>
 *   [Genomes of the Orestias pupfish from the Andean Altiplano shed light on their evolutionary history and phylogenetic relationships within Cyprinodontiformes](https://doi.org/10.1186/s12864-024-10416-w)
