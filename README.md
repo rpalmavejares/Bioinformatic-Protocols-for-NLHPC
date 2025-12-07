@@ -1,5 +1,5 @@
 # Bioinformatic Protocols for NLHPC
-#### Documentación con Tips y Buenas Practicas para el uso del NLHPC para tareas de Bioinformática y/o similares<br>
+### Documentación con Tips y Buenas Practicas para el uso del NLHPC para tareas de Bioinformática y/o similares<br>
 
 El servicio del Laboratorio Nacional de Computación de Alto Rendimiento o [NLHPC](url:https://www.nlhpc.cl/) es un supercomputador a gran escala diseñado para dar respuesta a los desafíos cientificos y tecnológicos de nuestro pais.
 Esta infraestructura está al servicio de la comunidad y puede ser utilizada en áreas como Astronomía, Ingeniería, Salud y Bioinformática, siendo esta última la que exploraremos en el siguiente documento.
