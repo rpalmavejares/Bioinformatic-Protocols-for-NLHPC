@@ -888,7 +888,9 @@ Este error no es grave, es gravísimo, al borde de lo radiactivo y letal. Signif
 
 En el caso de que relancemos nuestra tarea, y este error vuelva a ocurrir, habrá que comunicarse con soporte@nlhpc.cl y pedir el uso exclusivo de un NODO, así como el monitoreo extenso de nuestro job. Así, podemos ver cómo solucionar el problema. En el peor de los casos, no podremos seguir ejecutando nuestro programa. En el mejor de los casos, y mayoritariamente por experiencia, bajar el número de CPU y aumentar la RAM elimina satisfactoriamente este error. El tiempo de ejecución aumentará, pero es mejor terminar más tarde que no terminar. En otras ocasiones, hay herramientas que por defecto, internamente llaman a más de 1 CPU para tareas secundarias, por lo que es esencial conocer los requerimientos internos de cada ejecución. Este tipo de requerimientos fallidos también puede provocar un "core-dumped".
 
+## 👤 Autor
 
+**[Ricardo Palma Véjares](rpalmavejares@gmail.com)**
 
 
 
