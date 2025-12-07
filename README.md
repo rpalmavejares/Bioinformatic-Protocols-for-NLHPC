@@ -22,7 +22,7 @@ Documentación con Tips y Buenas Practicas para el uso del NLHPC para tareas de 
     * [5.2 Monitoreo de tareas](5.2-Monitoreo-de-tareas)
     * [5.3 Cancelación de tareas](5.3-Cancelación-de-tareas)
 * [6. Errores de ejecución de tareas / jobs.](6.-Errores-de-ejecución-de-tareas-/-jobs.)
-    * [6.1 error: *** JOB XXXXXXXXX ON mn00P CANCELLED AT YEAR-MONTH-DAYT\:HH\:MM:SS ***](6.1-error:-***-JOB-XXXXXXXXX-ON-mn00P-CANCELLED-AT-YEAR-MONTH-DAYT:HH\:MM\:SS-***)
+    * [6.1 error: *** JOB XXXXXXXXX ON mn00P CANCELLED AT (DATE) ***.](6.1-error:-***-JOB-XXXXXXXXX-ON-mn00P-CANCELLED-AT-(DATE)-***.)
     * [6.2 OOM_KILL EVENT. Some of the step tasks have been OOM Killed.](6.2-OOM_KILL-EVENT.-Some-of-the-step-tasks-have-been-OOM-Killed.)
     * [6.3 Segmentation fault (core dumped). Aborted (core dumped)](6.3-Segmentation-fault-(core-dumped).-Aborted-(core-dumped))
 
@@ -812,7 +812,7 @@ Con esto, podemos eliminar esta tarea de la cola, y volver a relanzar nuestro sc
 
 En un mundo perfecto, todas nuestras tareas correrán en el tiempo asignado y finalizarán sin ningún inconveniente. Mientras eso no exista, revisemos algunos de los errores más frecuentes y cómo solucionarlos.
 
-### 6.1 error: *** JOB XXXXXXXXX ON mn00P CANCELLED AT YEAR-MONTH-DAYT:HH:MM:SS ***. ###
+### 6.1 error: *** JOB XXXXXXXXX ON mn00P CANCELLED AT (DATE) ***. ###
 
 Este error es frecuentemente encontrado cuando nuestra tarea está subutilizando recursos y es cancelada automáticamente por el sistema.
 Este caso se da si pedimos demasiados CPU o RAM, pero nuestra tarea está utilizando menos del 20% de los recursos solicitados.
