@@ -137,7 +137,7 @@ HomeBrew
 PERL
 PIP
 ```
-Tanto Anaconda3 como Miniconda funcionan sin problemas en el NLHPC (https://www.anaconda.com/docs/getting-started/miniconda/install#linux-x86) y se pueden instalar de manera local en nuestra cuenta así:
+Tanto Anaconda3 como Miniconda funcionan sin problemas en el NLHPC (https://www.anaconda.com/docs/getting-started/miniconda/install#linux-x86) y se pueden instalar de manera local en nuestra cuenta de la siguiente forma:
 
 ```
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -151,7 +151,7 @@ conda install bioconda::meme
 conda install bioconda/label/cf201901::meme
 ```
 
-Eventualemte, la instalación se ejecutara sin problemas y podremos utilizar la herrameinta como corresponda.<br>
+Eventualemte, la instalación se ejecutara sin problemas y podremos utilizar la herramienta como corresponda.<br>
 
 ### 3.2 Modo SUDO
 
