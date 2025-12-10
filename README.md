@@ -898,7 +898,8 @@ Una vez que hayamos terminado nuestros análisis y podamos finalmente escribir n
 Para ello, en el apartado de **Acknowledgements** de nuestra publicación debemos escribir:
 
 
-### "Experiments presented in this paper were carried out using the supercomputing infrastructure of NLHPC at CMM, Universidad de Chile (see https://www.nlhpc.cl/infraestructura/)"
+### ES: "Powered@NLHPC: Esta investigación/tesis fue parcialmente apoyada por la infraestructura de supercómputo del NLHPC (CCSS210001)"
+### EN: "Powered@NLHPC: This research/thesis was partially supported by the supercomputing infrastructure of the NLHPC (CCSS210001)"
 
 Este sera siempre el paso final al ejecutar nuestras laborales en el NLHPC.
 
