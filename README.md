@@ -901,7 +901,7 @@ Para ello, en el apartado de **Acknowledgements** de nuestra publicación debemo
 ### ES: "Powered@NLHPC: Esta investigación/tesis fue parcialmente apoyada por la infraestructura de supercómputo del NLHPC (CCSS210001)"
 ### EN: "Powered@NLHPC: This research/thesis was partially supported by the supercomputing infrastructure of the NLHPC (CCSS210001)"
 
-Este sera siempre el paso final al ejecutar nuestras laborales en el NLHPC.
+Este será siempre el paso final al ejecutar nuestras laborales en el NLHPC.
 
 
 
