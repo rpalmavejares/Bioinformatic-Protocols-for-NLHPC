@@ -806,9 +806,9 @@ NODELIST(REASON):   Nodo en el cual se esta ejecutando nuestra tarea. En en caso
                     que solicitamos para poder ejecutarse.
                     Priority: Nuestra tarea esta en la cola de procesos y esta esperando
                     a que tareas de otros usuarios terminen
-                    QOS[MaxCPULimit]: Nuestra cuenta ya esta utilizando el Maximo numero
-                    de CPU asignados a nuestro usuario y tendremos que esperar a que otras
-                    de nuestras tareas terminen
+                    QOSMaxCpuPerUserLimit: Nuestra cuenta ya esta utilizando el Maximo
+                    numero de CPU asignados a nuestro usuario y tendremos que esperar a
+                    que otras de nuestras tareas terminen
 ```
 
 <br>
