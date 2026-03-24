@@ -163,7 +163,7 @@ sudo install tool
 sudo apt install tool
 ```
 NO son validos.<br>
-En el caso de necesitar instalar una herramienta que requiera específicamente este comando, existen 2 soluciones específicas:.<br>
+En el caso de necesitar instalar una herramienta que requiera específicamente este comando, existen 2 soluciones:.<br>
 
 #### 3.2.1 Instalación local con el codigo fuente. ####
 
